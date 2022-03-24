@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+</head>
+
+<body>
+    <h1>Javascript OOP</h1>
+    <p id='total'></p>
+
+    <script>
+        //https://www.w3schools.com/js/js_const.asp
+
+        //Metoda 2 ECMAScript 5 (2009)
+
+        function Produs(nume, pret) {  //functie ce joaca rolul de "class" si se numeste constructor
+            this.nume = nume;  // proprietati
+            this.pret = pret; //this reprezintă  obiectul creat
+        }
+        var paine =  new Produs('Franzela feilata',  2 ); //obiect
+        var apa = new Produs('Dorna', 2.25 ); // obiect
+
+        // Metoda 3 ECMAScript 5 (2009)
+
+        var faina = new Object();  //  este echivalent cu Object.create(constructorObject)
+        faina.nume = 'Faina de grau 000';
+        faina.pret = 3.75;
+        
+
+        var cos = []; // array de obiecte
+        cos.push(paine);
+        cos.push(apa);
+        cos.push(apa);
+        cos.push(apa);
+        cos.push(faina);
+        cos.push(faina);
+
+        var total = cos.map(produs => produs.pret).reduce(
+            function (x, y) {
+                return x + y
+            },0
+        );
+
+        console.log('Cumparaturi in valoare de ' + total);
+        document.getElementById('total').innerHTML = total;
+
+    </script>
+</body>
+
+</html>

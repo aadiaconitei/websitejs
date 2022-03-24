@@ -1,0 +1,125 @@
+body {
+	background: #0e854d;
+	color: rgb(254, 254, 254);
+	font-family: Arial, Helvetical, sans-serif;
+	font-size: 13px;
+	margin: 0;
+    text-align: center;
+    
+}
+
+h1 {
+	color: #4d2a0c;
+	font-size: 16px;
+}
+
+#game_wrapper {
+	clear: both;
+	margin-bottom: 15px;
+    overflow: hidden;
+    width: 100%;
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+.txt_center {
+	clear: both;
+}
+
+.button {
+	box-shadow: 0 0 5px rgba(0,0,0,.2);
+
+	background: rgb(0, 0, 0,.9); /* Old browsers */
+	box-sizing: border-box;
+	float: left;
+	margin: 0 1%;
+	padding: 10px;
+	text-align: center;
+	width: 31%;
+}
+
+.button:active {
+	background: rgb(226,226,226); /* Old browsers */
+	background: -moz-linear-gradient(top, rgba(226,226,226,1) 0%, rgba(219,219,219,1) 51%, rgba(209,209,209,1) 52%, rgba(133, 30, 30,1) 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top, rgba(226,226,226,1) 0%,rgba(219,219,219,1) 51%,rgba(209,209,209,1) 52%,rgba(133, 30, 30,1) 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, rgba(226,226,226,1) 0%,rgba(219,219,219,1) 51%,rgba(209,209,209,1) 52%,rgba(133, 30, 30,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+
+.button img {
+	height: auto;
+	width: 55px;
+}
+
+#result {
+	background: #ee6565;
+	border-radius: 5px;
+	color: #ffffff;
+	margin: 10px;
+	padding: 5px;
+    text-align: center;
+    max-width: 300px;
+    margin: auto;
+}
+
+#computer_zone,
+#player_zone {
+	text-align: center;
+}
+
+#computer_choice,
+#player_choice {
+	border: 2px dashed rgb(254, 254, 254);
+	height: 80px;
+	margin: 10px auto;
+	padding: 5px;
+	width: 80px;
+}
+
+#computer_choice img,
+#player_choice img {
+	height: auto;
+	width: 68px;
+}
+
+#computer_choice img {
+	-moz-transform: scale(-1, -1);
+    -o-transform: scale(-1, -1);
+    -webkit-transform: scale(-1, -1);
+    transform: scale(-1, -1);
+}
+
+#score_display {
+	color: #ffffff;
+	font-weight: bold;
+	padding: 10px 0;
+}
+
+.sns a {
+    background: url(http://onlywebpro.com/demo/farmer_vs_groundhog/img/btn_sns.png)left top no-repeat;
+    display: inline-block;
+    margin: 5px;
+    height: 44px;
+    width: 44px;
+}
+
+#btn_twitter {
+    background-position: -45px top;
+}
+
+.copyright {
+    border-top: 1px dotted #333;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+}
+.btn_see_more {
+    background: #fac038;
+    border-radius: 5px;
+    color: #4d2a0c;
+    display: block;
+    margin: 0 auto 10px;
+    padding: 5px;
+    text-decoration: none;
+    text-align: center;
+    width: 280px;
+}

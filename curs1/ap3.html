@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    
+</head>
+
+<body>
+    <h1>Javascript</h1>
+   
+
+
+    <script>
+        //https://www.w3schools.com/js/js_es5.asp
+        
+
+        //Metoda 1 ECMAScript 5 (2009)
+
+
+        var paine = { nume: 'Franzela feilata', pret: 2 }; //obiect
+        var apa = { nume: 'Dorna', pret: 2.25 }; // obiect
+        var cos = []; // array de obiecte
+        var valoareinitiala=0;
+        cos.push(paine);
+        cos.push(paine);
+        cos.push(apa);
+        cos.push(apa);
+        cos.push(apa);
+
+        var total = cos.map(produs => produs.pret).reduce(
+            (previousValue, currentValue) => previousValue + currentValue,
+            valoareinitiala
+        );
+
+        console.log('Cumparaturi in valoare de ' + total);
+        document.getElementById('total').innerHTML = total;
+
+    </script>
+     <p id='total'></p>
+</body>
+
+</html>
