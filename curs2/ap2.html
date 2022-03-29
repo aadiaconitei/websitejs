@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>getElementById</h2>
+
+    <p id="myid"></p>
+    <!-- <p id="myid2"></p> -->
+    Este important sa efectuam navigarea dupa introducerea elementelor HTML, nu înainte de aceasta
+    <script>
+        function salut(id) {
+            id.innerHTML = 'Acesta este un mesaj scris din javascript!';
+        }
+        var id = document.getElementById("myid");
+        salut(id);
+       
+        // Ce se intampla daca se apeleaza inca o data functia? salut(id);
+        // var id2 = document.getElementById("myid2");
+        // salut(id2);
+    </script>
+</body>
+
+</html>

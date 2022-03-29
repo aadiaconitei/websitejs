@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<style>
+    body {
+  padding-top: 80px;
+}
+
+.show-cart li {
+  display: flex;
+}
+.card {
+  margin-bottom: 20px;
+}
+.card-img-top {
+  width: 200px;
+  height: 200px;
+  align-self: center;
+}
+</style>
+</head>
+<body>
+   
+  <!-- Main -->
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="card" style="width: 20rem;">
+          <img class="card-img-top" src="http://www.azspagirls.com/files/2010/09/orange.jpg" alt="Card image cap">
+          <div class="card-block">
+            <h4 class="card-title">Orange</h4>
+            <p class="card-text">Price: $0.5</p>
+            <a id="orange" href="#" data-bs-toggle="modal"
+            data-bs-target="#modalForm" data-name="Orange" data-description="Orange show details" data-price="0.5" class="add-to-cart btn btn-primary">View more</a>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card" style="width: 20rem;">
+          <img class="card-img-top" src="http://images.all-free-download.com/images/graphicthumb/vector_illustration_of_ripe_bananas_567893.jpg" alt="Card image cap">
+          <div class="card-block">
+            <h4 class="card-title">Banana</h4>
+            <p class="card-text">Price: $1.22</p>
+            <a id="banana" href="#" data-bs-toggle="modal"
+            data-bs-target="#modalForm" data-name="Banana" data-description="Banana show details" data-price="1.22" class="add-to-cart btn btn-primary">View more</a>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card" style="width: 20rem;">
+          <img class="card-img-top" src="https://3.imimg.com/data3/IC/JO/MY-9839190/organic-lemon-250x250.jpg" alt="Card image cap">
+          <div class="card-block">
+            <h4 class="card-title">Lemon</h4>
+            <p class="card-text">Price: $5</p>
+            <a id="lemon" href="#" data-bs-toggle="modal"
+            data-bs-target="#modalForm" data-name="Lemon" data-description="Lemon show details" data-price="5" class="add-to-cart btn btn-primary">View more</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="modalForm" tabindex="-1" aria-labelledby="titleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="titleModalLabel">Bootstrap 5 Modal </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>Price: <span id="price"></span></p>
+                <p>Description: <span id="description"></span></p>
+            </div>
+        </div>
+    </div>
+</div>
+  <!-- Import jquery cdn -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+  integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+  </script>
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+  crossorigin="anonymous"></script>
+  <script>
+var id;
+$("#modalForm").on('show.bs.modal', function(event) {
+    var button = $(event.relatedTarget); //Button that triggered the modal
+    const produs = button.data('name') //need to find the button and get email
+    const pret = button.data('price') //need to find the button and get name
+    const description = button.data('description'); 
+    $(".modal-header #titleModalLabel").html(produs);
+    $(".modal-body #price").html(pret);
+    $(".modal-body #description").text(description);
+    id = button.attr('id');
+    // var datainfo = document.getElementById(id);
+     alert(JSON.stringify(button));
+    // alert(JSON.stringify(datainfo));
+    
+   
+  })
+  $("#modalForm").on('hidden.bs.modal', function(event) {
+   
+   // alert('Modalul s-a inchis');
+    document.getElementById(id).classList.remove('btn-primary');
+    document.getElementById(id).classList.add('btn-info');
+  })
+  </script>
+</body>
+</html>

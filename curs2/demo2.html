@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <p id="myp1"> </p>
+    <p id="myp2"> </p>
+    <script>
+        function salut(myid, mymessage){
+            let myp = document.getElementById(myid);
+            myp.innerHTML=mymessage;
+        }
+        salut('myp1', 'Buna ziua');
+        salut('myp2', 'Salut');
+    </script>
+</body>
+</html>

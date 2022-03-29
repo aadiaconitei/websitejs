@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Untitled Document</title>
+ 
+</head>
+
+<body onLoad="g()" onclick="countClicks()">
+    <h2>Tratarea evenimentelor de catre sistem</h2>
+    <input type="text" onkeypress="myFunction(event)">
+    <p id="demo"></p>
+
+    <select id="dropdown">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+    </select>
+    <textarea placeholder = "Scrie ceva apoi inchide tabul">
+   </textarea>
+    <p id="num_of_clicks"></p>
+
+
+
+    <p>Alte exemple: <a href="http://liouh.com/jsevents/">http://liouh.com/jsevents/</a></p>
+
+
+    <script>
+        // https://developer.mozilla.org/en-US/docs/Web/Events
+        // Detectam daca utilizatorul inchie tab-ul / pagina / browser-ul
+        window.addEventListener('beforeunload', (event) => {
+            // Cancel the event as stated by the standard.
+            event.preventDefault();
+            // Chrome requires returnValue to be set.
+            event.returnValue = "";
+            
+        });
+        
+        function g() {
+            alert("Salut! Bine ati venit!");
+        }
+        function myFunction(event) {
+            alert('Ati apasat o tasta!');
+            var x = event.which || event.keyCode;
+            document.getElementById("demo").innerHTML = "Tasta apasata este in ASCII: " + x;
+
+        }
+        
+        var counter = 0;
+        function countClicks()
+        {   
+            counter = counter + 1;
+            document.getElementById("num_of_clicks").innerHTML = "Number of Mouse clicks: " + counter; 
+        }
+
+       
+        function eventHandler() {
+          
+            alert("Ati ales o valoare");
+        } 
+        document.getElementById("dropdown").onchange = eventHandler;
+    </script>
+</body>
+
+</html>

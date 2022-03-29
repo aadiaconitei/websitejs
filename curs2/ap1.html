@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body onload="addElement()">
+    <p>Primul paragraf</p>
+
+    <script>
+        function addElement(){
+            //1. Create a new element
+            const myp = document.createElement("p");
+            //2. set text
+            const mytext = document.createTextNode('Al 2-lea pargraf');
+            //3. add text
+            myp.appendChild(mytext);
+            //4. set attribute
+            myp.setAttribute("title",'titlul paragraf');
+            //5. set parent element
+            const mybody = document.getElementsByTagName("body")[0];
+            //6. add child element
+            mybody.appendChild(myp);
+        }
+    </script>
+</body>
+</html>

