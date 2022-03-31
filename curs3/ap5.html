@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            height: 200px;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        button {
+            margin: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>O poza cu catei generata</h1>
+        <img id="photo" src="#" alt="demo">
+        <button id="btn">Afiseaza o poza!</button>
+    </div>
+
+
+    <script>
+        var img = document.querySelector("#photo");
+        var btn = document.querySelector("#btn");
+        btn.addEventListener("click", function () {
+            var xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    let data = JSON.parse(xhr.responseText);
+                    let url = data.message;
+                    img.src = url;
+                }
+            }
+            xhr.open("GET", "https://dog.ceo/api/breeds/image/random");
+            xhr.send();
+        });
+
+    </script>
+</body>
+
+</html>

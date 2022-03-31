@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 200px;
+            float: left;
+            border: 3px solid red;
+            margin: 10px;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <button  class="bt" id = "bt1">but1</button>
+    <button class="bt" id = "bt2">but2</button>
+    <button  class="bt" id = "bt3">but3</button>
+    <button class="bt" id = "bt4">but4</button>
+    <div id="panel1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere voluptatem, recusandae ea voluptas molestias fuga rem cumque, dolores quas sit, minima distinctio porro praesentium iure voluptatibus eius fugit doloribus. Dolorum.</div>
+    <div id="panel2">Voluptates, temporibus mollitia voluptatem nulla ea ullam tempora inventore veniam. Ipsam necessitatibus voluptas, eum illo mollitia nihil repellat exercitationem sit ducimus distinctio fugit aliquid, laudantium at, quisquam assumenda magni impedit?</div>
+    <div id="panel3">Voluptates, temporibus mollitia voluptatem nulla ea ullam tempora inventore veniam. Ipsam necessitatibus voluptas, eum illo mollitia nihil repellat exercitationem sit ducimus distinctio fugit aliquid, laudantium at, quisquam assumenda magni impedit?</div>
+    <div id="panel4">Voluptates, temporibus mollitia voluptatem nulla ea ullam tempora inventore veniam. Ipsam necessitatibus voluptas, eum illo mollitia nihil repellat exercitationem sit ducimus distinctio fugit aliquid, laudantium at, quisquam assumenda magni impedit?</div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        $(document).ready(function () {
+
+            $("#bt4").click(function () {
+                $('#panel4').toggle();
+            });
+            $(".bt").click(function () {
+                $('#panel3').toggle();
+            });
+            // $("#panel1").hide(500).show(1000).hide(500).show(1000);
+            // $("#panel2").fadeIn(200).fadeOut(200).fadeIn(200).fadeOut(200).fadeIn(200).fadeOut(200).fadeIn(200);
+            // $("#panel3").slideUp(500).delay(1000).slideToggle(500).slideToggle(500).delay(1000).slideDown(500);
+        });
+    </script>
+</body>
+
+</html>

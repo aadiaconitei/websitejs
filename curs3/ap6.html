@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: lightblue;
+        }
+
+        button {
+            padding: 10px 30px;
+            text-transform: capitalize;
+            background: #222;
+            color: #eee;
+            outline: 0;
+            border: 0;
+            border-radius: 3px;
+            cursor: pointer;
+            text-align: center;
+            margin: 20px 10px;
+        }
+
+        button:active {
+            transform: scale(0.97);
+        }
+
+        ul {
+            background: firebrick;
+            padding: 20px;
+            margin: 0 10px
+        }
+
+        ul li {
+            color: lightblue;
+        }
+
+        .lds-dual-ring.hidden {
+            display: none;
+        }
+
+        .lds-dual-ring {
+            display: inline-block;
+            width: 80px;
+            height: 80px;
+        }
+
+        .lds-dual-ring:after {
+            content: " ";
+            display: block;
+            width: 64px;
+            height: 64px;
+            margin: 5% auto;
+            border-radius: 50%;
+            border: 6px solid #fff;
+            border-color: #fff transparent #fff transparent;
+            animation: lds-dual-ring 1.2s linear infinite;
+        }
+
+        @keyframes lds-dual-ring {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: rgba(0, 0, 0, .8);
+            z-index: 999;
+            opacity: 1;
+            transition: all 0.5s;
+        }
+    </style>
+</head>
+
+<body>
+
+    <button id="btn">Get Data</button>
+    <p id="p"></p>
+
+    <div id="loader" class="lds-dual-ring hidden overlay"></div>
+    <script>
+        console.clear();
+        // https://jsonplaceholder.typicode.com/guide/
+        // https://jsonplaceholder.typicode.com/users
+        // fake api data 'https://jsonplaceholder.typicode.com/posts/'
+        const btn = document.getElementById('btn');
+        const p = document.getElementById('p');
+
+        btn.addEventListener('click', getData);
+        function getData() {
+            document.getElementById('loader').classList.remove('hidden');
+            const xhr = new XMLHttpRequest();
+            xhr.open('GET', 'https://jsonplaceholder.typicode.com/posts/', true);
+            xhr.onload = function () {
+                if (this.status == 200) {
+                    const data = JSON.parse(this.responseText)
+                    console.table(data);
+                    data.forEach(item => {
+                        p.innerHTML += `
+   <ul>
+   <li>ID: ${item.id}</li>
+   <li>Title: ${item.title}</li>
+   <li>Body: ${item.body}</li>
+   </ul>
+   `
+                    })
+                    document.getElementById('loader').classList.add('hidden');
+
+                }
+            }
+            xhr.onerror = function () {
+                const error = `404: Not Found`
+                console.log(error);
+                p.innerHTML = error;
+            }
+            xhr.send();
+        }
+    </script>
+
+</body>
+
+</html>

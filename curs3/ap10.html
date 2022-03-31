@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Salut</title>
+
+</head>
+
+<body>
+    <h1>Titlul modificat cu JavaScript</h1>
+    <h1>Titlul modificat cu JavaScript</h1>
+    <p id="js">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolorum, earum minima saepe reprehenderit
+        corrupti tempore tenetur numquam corporis quas aspernatur ab? Ab corrupti at repudiandae, illo nesciunt sunt
+        voluptatibus amet.</p>
+    <div class="jsclasa">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nesciunt facere similique animi
+        voluptatem magnam fuga nemo blanditiis aperiam eligendi optio. Ipsam laboriosam vitae minus aliquid libero
+        placeat voluptate alias ea!</div>
+    <div class="jsclasa">Cupiditate nemo dolores a excepturi accusantium velit placeat rem error rerum laborum ut alias
+        incidunt atque fuga hic porro eos doloribus harum, fugit, autem tempora voluptas voluptatem maxime ducimus?
+        Voluptatem.</div>
+    <div class="jsclasa">Non quam quos voluptas nihil excepturi temporibus, mollitia vel libero repellat maxime autem
+        corporis numquam cupiditate sint, architecto nemo qui, laboriosam dignissimos nostrum. Iste, et dolorem.
+        Voluptatem quis perferendis odio.</div>
+
+    <h2>Subtitlul modificat din jquery</h2>
+    <h2>Subtitlul modificat din jquery</h2>
+    <section class="jsqclasa">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit possimus soluta nisi aut a,
+        nam dolore, vitae asperiores voluptates blanditiis maiores modi consequatur mollitia facere est inventore quis
+        ipsa veritatis.</section>
+    <section class="jsqclasa">Nobis velit incidunt ipsum, dolore, mollitia praesentium pariatur voluptatibus placeat
+        sint perspiciatis iste facilis debitis repellendus perferendis. Fugiat, voluptate? Minima, iusto odit! Voluptas
+        sunt vitae fugiat quisquam porro, voluptate sapiente.</section>
+    <section class="jsqclasa">Ex labore sunt dicta eius dignissimos exercitationem voluptatibus quam ipsam suscipit
+        molestiae? Exercitationem, delectus explicabo repellat minima ea veniam laudantium, at ad aspernatur, eos
+        pariatur ullam sit aliquid! Quis, vitae.</section>
+    <footer id="footer">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eius earum incidunt quidem unde sunt
+        velit quia, harum quisquam nesciunt assumenda quaerat hic suscipit voluptates libero dolorum quos rem
+        repudiandae exercitationem.</footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        // javascrip standard = Vanilla.js 
+        function getRandomColor() {
+            var letters = '0123456789ABCDEF';
+            var color = '#';
+            for (var i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+        var titlu = document.getElementsByTagName("h1")[0];
+        titlu.innerHTML = 'Javascript';
+        var paragraf = document.getElementById("js");
+        paragraf.style.color = "blue";
+        var div = document.getElementsByClassName("jsclasa");
+        for (let i = 0; i < div.length; i++) {
+            div[i].style.color = getRandomColor();
+        }
+        //jQuery
+        $(document).ready(function () {
+            $("h2").first().text('jQuery');
+            $("#footer").css({ "color": "blue", fontSize: '28px' });
+            $(".jsqclasa").each(function () {
+                $(this).css({ "color": getRandomColor2() });
+            });
+        });
+
+
+        function getRandomColor2() {
+            $letters = '0123456789ABCDEF';
+            $color = '#';
+            for ($i = 0; $i < 6; $i++) {
+                $color += $letters[Math.floor(Math.random() * 16)];
+            }
+            return $color;
+        }
+
+        // javascript standard = Vanilla.js   vs  jQuery
+        //var paragraf = document.getElementById("js");
+        //$("#js")
+    </script>
+</body>
+
+</html>
