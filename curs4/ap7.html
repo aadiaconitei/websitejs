@@ -5,18 +5,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>jQuery Ajax</title>
+    
+</head>
+
+<body>
+    <h2>Folosim metoda $.ajax() pentru a face un request de tip POST pentru a trimite informatii la server</h2>
+
+    <button>POST data</button>
+
+    <div></div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script>
         $(document).ready(function () {
+           
             $("button").click(function (e) {
+                alert(1);
                 $.ajax({
                     url: 'http://localhost/mysite/post.php',
-                    //headers: {"Access-Control-Allow-Origin:": "*"},
+                    headers: {"Access-Control-Allow-Origin:": "*"},
                     dataType: 'text',
                     type: 'post',
                     contentType: 'application/x-www-form-urlencoded',
                     data: { nume: 'Adrian',email:'test@demo.com' },
                     success: function (data, status, xhr) {
+                        console.log(status);
                         $('div').html(data);
                         $('div').delay(5000).fadeOut(800);   
                     },
@@ -29,15 +41,6 @@
             });
         });
     </script>
-</head>
-
-<body>
-    <h2>Folosim metoda $.ajax() pentru a face un request de tip POST pentru a trimite informatii la server</h2>
-
-    <button>POST data</button>
-
-    <div></div>
-
 </body>
 
 </html>

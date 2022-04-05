@@ -31,11 +31,11 @@
         function myFunction(data) {
             var out = "";
             var i;
-            console.log(data.bpi);
+            console.log(data);
             document.getElementById("data").innerHTML = data.time.updated;
                 out += `
                 <ul>
-                <li>EUR: ${data.bpi.EUR.rate}</li>
+                <li>EUR: ${data.bpi.EUR.rate_float}</li>
                 <li>GBP: ${data.bpi.GBP.rate}</li>
                 <li>USD: ${data.bpi.USD.rate}</li>
                 </ul>

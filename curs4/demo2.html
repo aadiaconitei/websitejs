@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1> 1 Bitcoin </h1>
+    <div id="data"></div>
+    <div id="bit"></div>
+    <button id="demo1">Get JSON data</button>
+    <button id="demo2">Get AJAX data</button>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+
+    <script>
+
+
+        $(document).ready(function () {
+            $("button#demo1").click(function () {
+                let url = "https://api.coindesk.com/v1/bpi/currentprice.json";
+                $.getJSON(
+                    url,
+                    function (result) {
+                        $("div#data").append(result.time.updated);
+                        $("div#bit").append(result.bpi.EUR.rate);
+                        console.log(result);
+                    }
+                );
+            });
+        });
+
+        $(document).ready(function () {
+            $("button#demo2").click(function () {
+                $.ajax(
+                    "https://api.coindesk.com/v1/bpi/currentprice.json",
+                    {
+                        type: 'GET',  // http method
+                        dataType: 'json', // type of response data
+                        success: function (result, status, xhr) {
+                            $("div#data").append(result.time.updated);
+                            $("div#bit").append(result.bpi.EUR.rate);
+                        },
+                        error: function (jqXhr, textStatus, errorMessage) { // error callback 
+                            $('div#demo').append(' Va rugam reveniti ');
+                        },
+                        complete: function () {
+                           console.log('Cererea s-a terminat!!');
+                        },
+                    });
+            });
+        });
+
+    </script>
+
+</body>
+
+</html>

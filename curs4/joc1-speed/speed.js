@@ -23,9 +23,7 @@ function start() {
 
 function createNewLetter() {
   var letter = randomLetter();
-  var element = $('<div></div>')
-    .text(letter)
-    .addClass(letter)
+  var element = $('<div></div>').text(letter).addClass(letter)
     .css({
       backgroundColor: randomColor(),
       bottom: randomPosition(),
@@ -35,13 +33,13 @@ function createNewLetter() {
   $('.container').append(element);
 
   setTimeout(createNewLetter,
-    // Math.max(3000 - score / 10 * 500, 500)
-    3000
+     Math.max( 500, 500)
+   // 3000
   );
 }
 
 function randomLetter() {
-  var code = 97 + randomNumber(25);
+  var code = 65 + randomNumber(25);
   var letter = String.fromCharCode(code);
   return letter;
 }

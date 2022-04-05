@@ -25,7 +25,7 @@
         // folosim un proxi  https://cors-anywhere.herokuapp.com/corsdemo
         // https://cors-anywhere.herokuapp.com
         var xmlhttp = new XMLHttpRequest();
-        var url = "https://forbes400.herokuapp.com/api/forbes400?limit=100";
+        var url = "https://cors-anywhere.herokuapp.com/https://forbes400.herokuapp.com/api/forbes400?limit=100";
 
         xmlhttp.onreadystatechange = function () {
             if (this.readyState == 4 && this.status == 200) {
@@ -39,7 +39,7 @@
     function myFunction(data) {
         let richList = "<ol>";
 
-        console.table(data);
+        console.log(data);
         data.forEach(item => {
             // console.table(item);
             richList += `

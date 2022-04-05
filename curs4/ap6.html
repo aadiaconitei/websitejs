@@ -26,7 +26,7 @@ crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     $(document).ready(function () {
         $("button").click(function () {
             $.ajax(
-                "https://programming-quotes-api.herokuapp.com/quotes/random",
+                "https://aaaaaaaprogramming-quotes-api.herokuapp.com/quotes/random",
                 {
                     type: 'GET',  // http method
                     //headers: {"Access-Control-Allow-Headers:": "*"},
@@ -36,7 +36,7 @@ crossorigin="anonymous" referrerpolicy="no-referrer"></script>
                         $('div#demo').append(data.en + ' ' + data.author + '<br><br>' );
                     },
                     error: function (jqXhr, textStatus, errorMessage) { // error callback 
-                        $('div#demo').append('Error: ' + errorMessage);
+                        $('div#demo').append(' Va rugam reveniti ' );
                     }
                 });
         });
