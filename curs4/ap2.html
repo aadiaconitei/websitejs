@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/ap2.css">
+</head>
+
+<body>
+    <button id='getDataBtn' onclick="start()">Get Data JS</button>
+    <button id='getDataBtn2' >Get Data jQuery</button>
+
+    <div id="richList"></div>
+
+
+    <div id="loader" class="lds-dual-ring hidden overlay"></div>
+</body>
+
+<script>
+    function start() {
+        document.getElementById('loader').classList.remove('hidden');
+        // folosim un proxi  https://cors-anywhere.herokuapp.com/corsdemo
+        // https://cors-anywhere.herokuapp.com
+        var xmlhttp = new XMLHttpRequest();
+        var url = "https://forbes400.herokuapp.com/api/forbes400?limit=100";
+
+        xmlhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                var myArr = JSON.parse(this.responseText);
+                myFunction(myArr);
+            }
+        };
+        xmlhttp.open("GET", url, true);
+        xmlhttp.send();
+    }
+    function myFunction(data) {
+        let richList = "<ol>";
+
+        console.table(data);
+        data.forEach(item => {
+            // console.table(item);
+            richList += `
+                <li>Nume: ${item.personName} Industrie:  ${item.industries} Firma: ${item.source}</li>
+            `})
+        richList += "</ol>"
+        document.getElementById('loader').classList.add('hidden');
+        document.getElementById("richList").innerHTML = richList;
+
+    }
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+ $('#getDataBtn2').click(function () {
+
+        $.ajax({
+            type: "GET",
+            url: "https://forbes400.herokuapp.com/api/forbes400?limit=100",
+            dataType: 'json',
+            beforeSend: function () {
+                $('#loader').removeClass('hidden')
+            },
+            success: function (data) {
+                console.log(data);
+                let richList = "<ol>";
+                for (let i = 0; i < data.length; i++) {
+                    console.log(data[i].uri);
+                    richList += "<li>" + data[i].uri + "</li>";
+                }
+                richList += "</ol>"
+                $('#richList').html(richList);
+            },
+            complete: function () {
+                $('#loader').addClass('hidden')
+            },
+        });
+
+    }); 
+</script>
+
+</html>

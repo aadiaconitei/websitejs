@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/ap2.css">
+</head>
+
+<body>
+    <button id='getDataBtn'>Get Data</button>
+
+    <div id="richList"></div>
+
+
+    <div id="loader" class="lds-dual-ring hidden overlay"></div>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+    $('#getDataBtn').click(function () {
+
+        $.ajax({
+            type: "GET",
+            url: "https://forbes400.herokuapp.com/api/forbes400?limit=100",
+            //headers: {"Access-Control-Allow-Origin:": "*"},
+            dataType: 'json',
+            beforeSend: function () {
+                $('#loader').removeClass('hidden')
+            },
+            success: function (data) {
+                console.log(data);
+                let richList = "<ol>";
+                for (let i = 0; i < data.length; i++) {
+                    console.log(data[i].uri);
+                    richList += "<li>" + data[i].uri + "</li>";
+                }
+                richList += "</ol>"
+                $('#richList').html(richList);
+            },
+            complete: function () {
+                $('#loader').addClass('hidden')
+            },
+        });
+
+    });
+</script>
+
+</html>

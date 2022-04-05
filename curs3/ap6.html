@@ -109,7 +109,7 @@
         function getData() {
             document.getElementById('loader').classList.remove('hidden');
             const xhr = new XMLHttpRequest();
-            xhr.open('GET', 'https://jsonplaceholder.typicode.com/posts/', true);
+            xhr.open('GET', 'https://jsonplaceholder.typicode.com/posts?userId=1', true);
             xhr.onload = function () {
                 if (this.status == 200) {
                     const data = JSON.parse(this.responseText)

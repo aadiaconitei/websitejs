@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Ajax</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("button").click(function (e) {
+                $.ajax({
+                    url: 'http://localhost/mysite/post.php',
+                    //headers: {"Access-Control-Allow-Origin:": "*"},
+                    dataType: 'text',
+                    type: 'post',
+                    contentType: 'application/x-www-form-urlencoded',
+                    data: { nume: 'Adrian',email:'test@demo.com' },
+                    success: function (data, status, xhr) {
+                        $('div').html(data);
+                        $('div').delay(5000).fadeOut(800);   
+                    },
+                    error: function (jqXhr, status, errorThrown) {
+                        console.log(errorThrown);
+                    }
+                });
+
+                e.preventDefault;
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <h2>Folosim metoda $.ajax() pentru a face un request de tip POST pentru a trimite informatii la server</h2>
+
+    <button>POST data</button>
+
+    <div></div>
+
+</body>
+
+</html>

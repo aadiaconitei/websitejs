@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>jQuery Drag & Drop</title>
+  
+    <link href="https://fonts.googleapis.com/css?family=Ropa+Sans" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="./css/ap4.css">
+</head>
+
+<body>
+    <div class="draggable-main">
+        <h1>jQuery Drag & Drop</h1>
+        <div class="box">
+            <ul class="connected-sortable draggable-left">
+                <li>Item 1</li>
+                <li>Item 2</li>
+                <li>Item 3</li>
+                <li>Item 4</li>
+                <li>Item 5</li>
+                <li>Item 6</li>
+                <li>Item 7</li>
+            </ul>
+        </div>
+        <div class="box">
+            <ul class="connected-sortable draggable-right">
+                <li>Item 8</li>
+                <li>Item 9</li>
+                <li>Item 10</li>
+                <li>Item 11</li>
+                <li>Item 12</li>
+                <li>Item 13</li>
+                <li>Item 14</li>
+            </ul>
+        </div>
+    </div>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js"
+integrity="sha256-eTyxS0rkjpLEo16uXTS0uVCS4815lc40K2iVpWDvdSY=" crossorigin="anonymous"></script>
+<script>
+$(".draggable-left, .draggable-right").sortable({
+    connectWith: ".connected-sortable",
+    stack: ".connected-sortable ul"
+}).disableSelection();
+</script>
+</html>

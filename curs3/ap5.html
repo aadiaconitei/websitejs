@@ -42,6 +42,9 @@
                     let url = data.message;
                     img.src = url;
                 }
+                else{
+                    console.log('error');
+                }
             }
             xhr.open("GET", "https://dog.ceo/api/breeds/image/random");
             xhr.send();

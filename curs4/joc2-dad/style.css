@@ -1,0 +1,197 @@
+
+        /* Add some margin to the page and set a default font and colour */
+
+        body {
+            margin: 30px;
+            font-family: "Georgia", serif;
+            line-height: 1.8em;
+            color: #333;
+        }
+
+        /* Give headings their own font */
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+        }
+
+        /* Main content area */
+
+        #content {
+            margin: 80px 70px;
+            text-align: center;
+            -moz-user-select: none;
+            -webkit-user-select: none;
+            user-select: none;
+        }
+
+        /* Header/footer boxes */
+
+        .wideBox {
+            clear: both;
+            text-align: center;
+            margin: 70px;
+            padding: 10px;
+            background: #ebedf2;
+            border: 1px solid #333;
+        }
+
+        .wideBox h1 {
+            font-weight: bold;
+            margin: 20px;
+            color: #666;
+            font-size: 1.5em;
+        }
+
+        /* Slots for final card positions */
+
+        #cardSlots {
+            margin: 20px auto 0 auto;
+            background: #f3f3f3;
+        }
+
+        /* The initial pile of unsorted cards */
+
+        #cardPile {
+            margin: 0 auto;
+            background: #f3f3f3;
+        }
+
+        #cardSlots,
+        #cardPile {
+            width: 880px;
+            height: 300px;
+            padding: 20px;
+            border: 2px solid #333;
+           
+            -moz-box-shadow: 0 0 .3em rgba(0, 0, 0, .8);
+            -webkit-box-shadow: 0 0 .3em rgba(0, 0, 0, .8);
+            box-shadow: 0 0 .3em rgba(0, 0, 0, .8);
+        }
+
+        /* Individual cards and slots */
+
+        #cardSlots div,
+        #cardPile div {
+            float: left;
+            
+            width: 115px;
+            height: 40px;
+            padding: 7px 3px;
+            padding-bottom: 3px;
+            border: 2px solid #E9214F;
+            
+            margin:  10px;
+            background: #fff;
+        }
+        #cardPile div{
+            cursor: move;
+        }
+        
+
+        #cardSlots div.hovered {
+            background: #aaa;
+        }
+
+        #cardSlots div {
+            border-style: dashed;
+        }
+
+        #cardPile div {
+            background: #E9214F;
+            color: #fff;
+            font-size: 18px;
+            font-weight: bold;
+            text-shadow: 0 0 3px #000;
+        }
+
+        #cardPile div.ui-draggable-dragging {
+            -moz-box-shadow: 0 0 .5em rgba(0, 0, 0, .8);
+            -webkit-box-shadow: 0 0 .5em rgba(0, 0, 0, .8);
+            box-shadow: 0 0 .5em rgba(0, 0, 0, .8);
+        }
+
+        /* Individually coloured cards */
+
+        #card1.correct, #card11.correct, #card21.correct {
+            background: red;
+        }
+
+        #card2.correct, #card12.correct, #card22.correct {
+            background: brown;
+        }
+
+        #card3.correct, #card13.correct, #card23.correct {
+            background: orange;
+        }
+
+        #card4.correct, #card14.correct, #card24.correct {
+            background: yellow;
+        }
+
+        #card5.correct, #card15.correct {
+            background: green;
+        }
+
+        #card6.correct, #card16.correct {
+            background: cyan;
+        }
+
+        #card7.correct, #card20.correct {
+            background: blue;
+        }
+
+        #card8.correct, #card19.correct {
+            background: indigo;
+        }
+
+        #card9.correct, #card18.correct {
+            background: purple;
+        }
+
+        #card10.correct, #card17.correct {
+            background: violet;
+        }
+
+
+        /* "You did it!" message */
+        #successMessage {
+            position: absolute;
+            left: 30%;
+            top: 40%;
+            width: 0;
+            height: 0;
+            z-index: 100;
+            background: rgb(203, 208, 203);
+            border: 2px solid #333;
+           
+            -moz-box-shadow: .3em .3em .5em rgba(0, 0, 0, .8);
+            -webkit-box-shadow: .3em .3em .5em rgba(0, 0, 0, .8);
+            box-shadow: .3em .3em .5em rgba(0, 0, 0, .8);
+            padding: 20px;
+        }
+        button{
+            padding: 15px;
+            background-color: #000;
+            color: #fff;
+            font-size: 14px;
+        }
+        #message {
+            position: absolute;
+            left: 30%;
+            top: 40%;
+            width: 0;
+            height: 0;
+            z-index: 100;
+            background: #fff;
+            border: 2px solid #333;
+           
+            -moz-box-shadow: .3em .3em .5em rgba(0, 0, 0, .8);
+            -webkit-box-shadow: .3em .3em .5em rgba(0, 0, 0, .8);
+            box-shadow: .3em .3em .5em rgba(0, 0, 0, .8);
+            padding: 20px;
+            display: none;
+          }
+  
