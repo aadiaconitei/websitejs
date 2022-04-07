@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+        //Exemplu de functie ce returneaza o promisiune
+        function slowAddition(n1, n2) {
+            return new Promise(resolve => {
+                setTimeout(() => resolve(n1 + n2), 2000);
+            });
+        }
+        //Exemplu de functie ce returneaza o promisiune
+        async function increaseSalary(base, increase) {
+            console.log('asteptam pana cand promisiunea va fi rezolvata');
+            const newSalary = await slowAddition(base, increase);
+            console.log(`Salariul nou: ${newSalary}`);
+            return newSalary;
+        }
+        increaseSalary(1000, 200); // => [object Promise]
+        // dupa 2 secunde "Salariul nou: 1200"
+    </script>
+</body>
+
+</html>

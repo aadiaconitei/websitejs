@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h1>Javascript Promise</h1>
+
+    <div id='promises-demo'>
+        <button type='button' onClick='makePromise();'>Make a promise</button>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        function makePromise() {
+            var iAmBitcoin = Math.random() < 0.5;
+            //DEFINIM PROMISIUNEA
+            var carPromise = new Promise(function (resolve, reject) {
+                var fiveSeconds = 5000;
+                setTimeout(function () {
+                    if (iAmBitcoin) {
+                        var car = {
+                            brand: 'Dacia',
+                            color: 'black'
+                        };
+                        resolve(car); // fulfilled
+                    } else {
+                        var reason = new Error('I am very disappointed');
+                        reject(reason); // reject
+                    }
+                }, fiveSeconds);
+            });
+
+            // var interval = setInterval(function () {
+            //     log("I still don't know if I'll get it...");
+            // }, 1000);
+            //FOLOSIM PROMISIUNEA
+            carPromise.then(function (myCar) {
+                log("I got a new car! It's a " + myCar.brand);
+                //reset(interval);
+                }, function (error) {
+                log("I didn't get a car. " + error.message);
+                //reset(interval);
+            });
+
+            $('#promises-demo p').remove();
+            $('#promises-demo button').attr('disabled', true);
+        }
+
+        function log(message) {
+            $('#promises-demo').append($('<p />').text(message));
+        }
+
+        // function reset(interval) {
+        //     clearInterval(interval);
+        //     $('#promises-demo button').attr('disabled', false);
+        // }
+    </script>
+</body>
+
+</html>

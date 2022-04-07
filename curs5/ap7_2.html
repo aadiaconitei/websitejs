@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1> Javascript Promise</h1>
+    <p> Rescrieti aplicatia ap6.html:
+        <br>
+        folosind acelasi API: <a href=" https://jsonplaceholder.typicode.com/posts/ ">
+            https://jsonplaceholder.typicode.com/posts/ </a><br>
+        - sa facem o aplicatie care sa afiseze pe rand , in aceasta ordine, articolole de la utilizatorul 1,
+        utilizatorul 2 si utilizatorul 3. <br>
+
+        - folosim PROMISE <br>
+    </p>
+    <button id="submit" type="button"> Afiseaza datele</button>
+    <p id="dataview"></p>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        var dataview = $('#dataview');
+        //function getData(iduser, callback) {
+        function getData(iduser) {
+            let rezultat = new Promise(function (resolve, reject) {
+                $.ajax({
+                    type: 'GET',
+                    url: 'https://jsonplaceholder.typicode.com/users/' + iduser + '/posts',
+                    headers: { "Access-Control-Allow-Origin": "*" },
+                    dataType: 'json',
+                    contentType: 'application/json',
+
+                }).done(function (data) {
+                    if (data.length > 0) {
+                        resolve(data);
+                    }
+                    else {
+                        reject('Error, nu s-au primit date!');
+                    }
+
+                }).fail(function (status) {
+                    reject('Error: a aparut o eroare ' + JSON.stringify(status))
+
+                }).always(function () {
+                    console.log('Cererea a fost tratata complet.')
+                });
+            });
+            return rezultat;
+        }
+        function showData(posts) {
+            //const posts = JSON.parse(data);
+            let post = '';
+            posts.forEach(item => {
+                post += `
+                <ul>
+                <li>ID: ${item.id}</li>
+                <li>Title: ${item.title}</li>
+                <li>Body: ${item.body}</li>
+                </ul>
+                `
+            })
+            dataview.append(post);
+        };
+        $(document).ready(function ($) {
+            $("#submit").click(function (e) {
+                getData(1).then((myposts) => {
+                    showData(myposts);
+                    console.log('succes promisiunea 1', myposts);
+                    // returnez promisiunea 2
+                    return getData(2).then((myposts) => {
+                        showData(myposts);
+                        console.log('succes promisiunea 2', myposts);
+
+                    })
+                }).catch((err) => {
+                    console.log('O promisiune nu s-a realizat', err);
+                })
+
+            });
+        });
+    </script>
+</body>
+
+</html>

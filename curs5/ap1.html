@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1> Executie cod sincron</h1>
+        <button type="button" class="btn btn-primary btn-sm ipinfo">My IP info</button>
+        <div class="result"></div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        $(document).ready(function () {
+            function pas1() {
+                for (var i = 0; i < 100000000; i++) {
+                    //nu fac nimic
+                }
+                console.log("pas1 este terminat");
+            }
+            function pas2() {
+                console.log("pas2 este terminat");
+            }
+            function getData(){
+                $.ajax({
+                    type: "GET",
+                    async: false,
+                    url: "https://ipinfo.io/json",
+                    dataType: "json",
+                    contentType: "application/json",
+                    success: function (data) {
+                        $('.result').append('<ul class="list-group"><li class="list-group-item">' + data.ip + '</li><li class="list-group-item">' + data.hostname + '</li><li class="list-group-item">' + data.city + '</li><li class="list-group-item">' + data.region + '</li><li class="list-group-item">' + data.country + '</li><li class="list-group-item">' + data.org + '</li></ul>');
+                    },
+                    error: function (data, status, error) {
+                        console.log("error");
+                    },
+                    complete: function (data, status, error) {
+                        console.log("Cererea AJAX sincron este gata!");
+                    }
+                });
+            }
+            $('.ipinfo').click(function () {
+                console.log("1");
+                console.log("2");
+                
+                pas1();
+                console.log("3");
+                getData();
+                console.log("4");
+                console.log("5");
+                pas2();
+            });
+        });
+    </script>
+
+</body>
+
+</html>

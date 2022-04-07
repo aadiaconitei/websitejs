@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="list text-center">
+
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        var currentscrollHeight = 0;
+        var count = 0;
+        $(document).ready(function ($) {
+            console.log('Pas1, apelez asincron callData');
+            let articles = callData();
+            console.log(articles);
+            display(articles);
+
+        });
+        $(window).on("scroll", function () {
+            const scrollHeight = $(document).height();
+            const scrollPos = Math.floor($(window).height() + $(window).scrollTop());
+            const isBottom = scrollHeight - 100 < scrollPos;
+
+            if (isBottom && currentscrollHeight < scrollHeight) {
+                alert('calling...');
+
+                let articles = callData();
+                console.log(articles);
+                display(articles);
+
+                currentscrollHeight = scrollHeight;
+            }
+        });
+        async function callData() {
+
+            const response = await fetch('https://baconipsum.com/api/?type=meat-and-filler/');
+            console.log('Pas2, obtin datele din API');
+            if (!response.ok) {
+                throw new Error('Failed to fetch data');
+            }
+
+
+            const myarticles = await response.json();
+            console.log('Pas3, returnez datele din API');
+            return myarticles;
+        }
+        function display(result) {
+            console.log('sunt in func display', result);
+            result.then(function (v) {
+                for (var i = 0; i < 5; i++) {
+                    $('<div class="card my-4 py-3"><h4 class="card-title">' + v[i] + '</h4></div>').appendTo('.list');
+
+                }
+            })
+                .catch((e) => {
+
+                    console.log('Mesaj de eroare; ', e);
+                })
+                .finally(() => {
+                    console.log(
+                        "Promisiunea s-a incheiat: cu succes sau fara succes."
+                    );
+                });
+
+        }
+    </script>
+</body>
+
+</html>

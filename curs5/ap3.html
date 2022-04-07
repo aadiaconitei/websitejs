@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Callback</h1>
+    <button id="button" type="button"> Trimite datele</button>
+    <p> In javaScript o functie este un obiect!</p>
+
+    <script>
+        // functii ce au implementat default callback 
+        // Ex1 cu functie anonima
+        setTimeout(function () {
+            console.log("Apare dupa 2 secunde");
+        }, 2000);
+        // Ex1 mai detaliat cu o functie definita
+        function message() {
+            console.log("Acest mesaj apare dupa 2 secunde");
+        }
+        setTimeout(message, 2000);
+
+        // Ex2
+        // setInterval(function() { 
+        //     console.log("Apare la fiecare 2 secunde");
+        // },2000);
+        // definim noi o functie de tip callback
+        //Ex3
+        const button = document.getElementById('button');
+        function salut() {
+            console.log("Hello world");
+        }
+        button.addEventListener('click', salut); 
+        // salut este obiectul care reprezinta functia salut() cu rol de callback 
+
+
+        // Ex4 
+        function info() {
+            console.log("Am terinat treaba!");
+        }
+        function task(callback) {
+            for (let i = 0; i < 15; i++) {
+                console.log("Am facut task-ul: ", i);
+            }
+            callback();// se executa functia care reprezinta obiectul
+        }
+        task(info); 
+        // info - este obiectul care reprezinta functia
+        //  nu se foloseste asa task(info()); //ERROR
+    </script>
+</body>
+
+</html>

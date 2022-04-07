@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1> POMISES vs Async/Await</h1>
+<p> Metoda cu PROMISE  si cu Async/Await</p>
+    <script>
+        // 1. Metoda cu PROMISE
+        // Definim o promisiune
+        // function getNameP(nume) {
+        //     let promisiune = new Promise(function (resolve, reject) {
+        //         if (nume.length > 2) {
+        //             resolve(`Numele meu este ${nume}`);
+        //         }
+        //         else {
+        //             reject('Nu doresc sa ma prezint!')
+        //         }
+        //     });
+        //     return promisiune;
+        // }
+
+        // function getAllNamesP() {
+        //     // folosim/verificam promisiunea
+        //     console.log('Hai sa ne cunoastem!');
+        //     getNameP('Ion').then(function (res) {
+        //         console.log(res);
+        //         return getNameP('Dan').then(function (res) {
+        //             console.log(res);
+        //             return getNameP('Adi').then(function (res){
+        //                 console.log(res);
+        //             })
+        //         })
+
+        //     }).catch(function (rej) {
+        //         console.log(rej);
+        //     })
+        // }
+        // getAllNamesP();
+        // 2. Metoda cu Async/Await
+        // // 
+        // function getSalut(nume) {
+        //     return `Salut ${nume}`;
+        // }
+        // let salut = getSalut('Mihai');
+        // console.log(salut);
+        // // Pas 1
+        // async function getName(nume) {
+        //     return `Numele meu este ${nume}`;
+        // }
+        // let myName = getName('Mihai');
+        // console.log(myName); //Asa NU
+        // myName.then(function (res) {
+        //     console.log('Promisiunea a fost indeplinita: ', res);
+
+        // })
+
+        // //Pas 2
+        // async function getAllNames() {
+        //     console.log('Hai sa ne cunoastem!');
+        //     let myName = await getName('Mihai');
+        //     console.log(myName);
+        //     myName = await getName('Ionut');
+        //     console.log(myName);
+        //     myName = await getName('Razvan');
+        //     console.log(myName);
+
+        // }
+        // getAllNames();
+
+        // 3. Metoda  await Promise.all mai eficienta
+        
+        // Pas 1
+        async function getName(nume) {
+            return `Numele meu este ${nume}`;
+        }
+         //Pas 2
+        async function getAllNames3() {
+            console.log('Hai sa ne cunoastem!');
+            let myName = getName('Mihai');
+            let myName2 =  getName('Ionut');
+            let myName3 =  getName('Razvan');
+            let arr = await Promise.all([myName, myName3,myName2]);
+            console.log(arr);
+            
+        }
+        getAllNames3();
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

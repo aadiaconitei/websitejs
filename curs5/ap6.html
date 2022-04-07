@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1> Callback Hell</h1>
+    <p> Pornind de la aplicatia <a href="https://github.com/aadiaconitei/websitejs/blob/main/curs3/ap6.html">ap6.html
+            din cursul 3</a>:
+        <br>
+        folosind acelasi API: <a href=" https://jsonplaceholder.typicode.com/posts/ ">
+            https://jsonplaceholder.typicode.com/posts/ </a><br>
+        - sa facem o aplicatie care sa afiseze pe rand , in aceasta ordine, articolole de la utilizatorul 1,
+        utilizatorul 2 si utilizatorul 3. <br>
+        - folosin metoda $.ajax() <br>
+        - folosim principiul callback <br>
+    </p>
+    <button id="submit" type="button"> Afiseaza datele</button>
+    <p id="dataview"></p>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        var dataview = $('#dataview');
+        function getData(iduser, callback) {
+            $.ajax({
+                type: 'GET',
+                url: 'https://jsonplaceholder.typicode.com/users/' + iduser + '/posts',
+                headers: { "Access-Control-Allow-Origin": "*" },
+                dataType: 'json',
+                contentType: 'application/json',
+                success: function (data, status, error) {
+                    callback(null, data);
+                },
+                error: function (status, error) {
+                    callback('Error: a aparut o eroare', status, error);
+                },
+                complete: function (data) {
+                    console.log('Cererea a fost tratata complet', data)
+                }
+            });
+        }
+        function showData(posts) {
+            //const posts = JSON.parse(data);
+            let post = '';
+            posts.forEach(item => {
+                post+= `
+                <ul>
+                <li>ID: ${item.id}</li>
+                <li>Title: ${item.title}</li>
+                <li>Body: ${item.body}</li>
+                </ul>
+                `
+            })
+            dataview.append(post);
+        };
+        $(document).ready(function ($) {
+            $("#submit").click(function (e) {
+                getData(1, (error, result) => {
+                    if (error) {
+                        console.log(error);
+                    }
+                    else {
+                        showData(result);
+                        console.log('succes', result);
+                        getData(2, (error, result) => {
+                            if (error) {
+                                console.log(error);
+                            }
+                            else {
+                                showData(result);
+                                console.log('succes', result);
+                            }
+                        });
+                    }
+                });
+
+            });
+        });
+    </script>
+</body>
+
+</html>

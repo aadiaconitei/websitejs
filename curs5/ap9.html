@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1> POMISES vs Async/Await</h1>
+<p>Metoda cu POMISES </p>
+    <script>
+        var nota = 7;
+        // Definim o promisiune
+        let promisiune = new Promise(function (resolve, reject) {
+            if (nota == 10) {
+                resolve('M-am tinut de promisiune si am luat nota ' + nota);
+            }
+            else {
+                reject('Nu m-am tinut de ponisiune!')
+            }
+        })
+
+        // folosim/verificam promisiunea
+        promisiune.then(function (res){
+            console.log('Promisiunea a fost indeplinita: ',res);
+
+        }).catch(function (rej){
+            console.log('Promisiunea NU a fost respectata: ',rej);
+        })
+    </script>
+</body>
+
+</html>

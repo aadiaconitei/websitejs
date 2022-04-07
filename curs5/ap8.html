@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="ap8.css">
+</head>
+
+<body>
+	<h2>Select dinamic</h2>
+	<div class="placeholder">
+		<p>
+			Ai select tara: <span id="country"></span>
+		</p>
+		<p>
+			Ai select oras: <span id="city"></span>
+		</p>
+	</div>
+
+
+	<h3>Va rugam sa selectati tara si orasul</h3>
+	<form>
+	    <select onchange="getCities(this.value)" name="countries">
+	        <option value="">Select tara</option>
+	        <option value="England">England</option>
+	        <option value="France">France</option>
+	        <option value="Spain">Spain</option>
+	        <option value="Germany">Germany</option>
+	    </select>
+
+	    <select onchange="getCity(this.value)" name="cities" id="cities" disabled>
+	        <option value="">Select Oras</option>
+	    </select>
+	</form>
+
+
+    <script src="ap8.js"></script>
+</body>
+
+</html>

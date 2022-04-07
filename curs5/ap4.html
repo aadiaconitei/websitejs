@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>
+        Cerere asincron cu $.ajax, metoda POST
+    </h1>
+    <form>
+        <label for="foo">Mesajul de trimis </label>
+        <input type="text" id="mesaj"  placeholder="Mesaj" required>*
+        <input id="saveFoo" type="submit" value="Trimite">
+    </form>
+    <div>Datele sunt valide: <span id="valid"></span></div>
+    <div>Datele introduse: <span id="output"></span></div>
+    <div>Mesaj primit: <span id="feedback"></span></div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        $("#saveFoo").click(function (e) {
+            var valid = this.form.checkValidity(); 
+            $("#valid").html(valid);
+            if (valid) {
+                event.preventDefault(); 
+                var feedback = $("#feedback");
+                var mesaj = $("#mesaj").val();
+                $("#output").html(mesaj);
+                $.ajax({
+                    type: 'POST',
+                    url: 'http://localhost/mysite/post.php', 
+                    headers: {"Access-Control-Allow-Origin": "*"},
+                    data: {
+                        mesaj: mesaj
+                    },
+                    dataType: 'json',
+                    success: function (data) {
+                        feedback.html("Datele au fost trimise cu success: " + data.form.mesaj);
+                    },
+                    error: function (data) {
+                        feedback.html("A aparut o eroare");
+                    },
+                    complete: function (data) {
+                        console.log('Cererea a fost tratata complet',data)
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>
