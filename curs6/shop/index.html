@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- CSS only -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.2/css/all.css" />
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <style>
+        .carousel-item {
+            min-height: 280px;
+        }
+    </style>
+    <link rel="stylesheet" href="./css/validare.css">
+</head>
+
+<body>
+
+    <div class="p-5 bg-warning">
+        <h1>Demo Header</h1>
+    </div>
+
+    <nav id="navbar_top" class="navbar  navbar-expand-lg navbar-dark bg-primary">
+        <div class="container-fluid">
+            <a href="#" class="navbar-brand">
+                <img src="./img/logo.svg" height="28" alt="Logo">
+            </a>
+            <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav">
+                    <a href="#section1" class="nav-item nav-link active">Acasa</a>
+                    <a href="#section2" class="nav-item nav-link">Despre</a>
+                    <a href="produse.html" class="nav-item nav-link">Produse</a>
+                    <a href="#section3" class="nav-item nav-link">Contact</a>
+
+                </div>
+                <div class="navbar-nav ms-auto">
+                    <a data-bs-toggle="modal" data-bs-target="#modalForm" data-email="adrian2@demo.com"
+                        data-nume="Adrian2" href="#" class="nav-item nav-link">Login</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="container-lg my-3">
+        <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+            <!-- Carousel indicators -->
+            <ol class="carousel-indicators">
+                <li data-bs-target="#myCarousel" data-bs-slide-to="0" class="active"></li>
+                <li data-bs-target="#myCarousel" data-bs-slide-to="1"></li>
+                <li data-bs-target="#myCarousel" data-bs-slide-to="2"></li>
+            </ol>
+
+            <!-- Wrapper for carousel items -->
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="./img/slide1.png" class="d-block w-100" alt="Slide 1">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>First slide label</h5>
+                        <p>Some demonstrative placeholder content for the first slide.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="./img/slide2.png" class="d-block w-100" alt="Slide 2">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Second slide label</h5>
+                        <p>Some demonstrative placeholder content for the second slide.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="./img/slide3.png" class="d-block w-100" alt="Slide 3">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Third slide label</h5>
+                        <p>Some demonstrative placeholder content for the third slide.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Carousel controls -->
+            <a class="carousel-control-prev" href="#myCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </a>
+            <a class="carousel-control-next" href="#myCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </a>
+        </div>
+
+        <div class="alert alert-info mt-3">
+            Carousel caption will be hidden on smaller viewport, but become visible on medium devices (i.e. viewport
+            width &ge;768px). Change orientation of this HTML editor to see how it works.
+        </div>
+    </div>
+    <!-- Demo Content -->
+    <div class="container">
+        <h1>Bootstrap Scrollspy</h1>
+        <p class="lead"><i>Scroll this web page and see how the navbar items are highlighted automatically based on the
+                scroll position. The items in dropdown submenu will be highlighted as well.</i></p>
+        <div id="section1">
+            <h2>Section 1</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu sem tempor, varius quam at, luctus dui.
+                Mauris magna metus, dapibus nec turpis vel, semper malesuada ante. Vestibulum id metus ac nisl bibendum
+                scelerisque non non purus. Suspendisse varius nibh non aliquet sagittis. In tincidunt orci sit amet
+                elementum vestibulum. Vivamus fermentum in arcu in aliquam. Quisque aliquam porta odio in fringilla.
+                Vivamus nisl leo, blandit at bibendum eu, tristique eget risus. Integer aliquet quam ut elit suscipit,
+                id interdum neque porttitor. Integer faucibus ligula.</p>
+            <p>Quis quam ut magna consequat faucibus. Pellentesque eget nisi a mi suscipit tincidunt. Ut tempus dictum
+                risus. Pellentesque viverra sagittis quam at mattis. Suspendisse potenti. Aliquam sit amet gravida nibh,
+                facilisis gravida odio. Phasellus auctor velit at lacus blandit, commodo iaculis justo viverra. Etiam
+                vitae est arcu. Mauris vel congue dolor. Aliquam eget mi mi. Fusce quam tortor, commodo ac dui quis,
+                bibendum viverra erat. Maecenas mattis lectus enim, quis tincidunt dui molestie euismod. Curabitur et
+                diam tristique, accumsan nunc eu, hendrerit tellus.</p>
+            <p>Orci facilisis, dignissim tortor vitae, ultrices mi. Vestibulum a iaculis lacus. Phasellus vitae
+                convallis ligula, nec volutpat tellus. Vivamus scelerisque mollis nisl, nec vehicula elit egestas a. Sed
+                luctus metus id mi gravida, faucibus convallis neque pretium. Maecenas quis sapien ut leo fringilla
+                tempor vitae sit amet leo. Donec imperdiet tempus placerat. Pellentesque pulvinar ultrices nunc sed
+                ultrices. Morbi vel mi pretium, fermentum lacus et, viverra tellus. Phasellus sodales libero nec dui
+                convallis, sit amet fermentum sapien auctor. Vestibulum ante ipsum primis in faucibus orci luctus et
+                ultrices posuere cubilia Curae; Sed eu elementum nibh, quis varius libero.</p>
+            <p>Nam eget purus nec est consectetur vehicula. Nullam ultrices nisl risus, in viverra libero egestas sit
+                amet. Etiam porttitor dolor non eros pulvinar malesuada. Vestibulum sit amet est mollis nulla tempus
+                aliquet. Praesent luctus hendrerit arcu non laoreet. Morbi consequat placerat magna, ac ornare odio
+                sagittis sed. Donec vitae ullamcorper purus. Vivamus non metus ac justo porta volutpat.</p>
+            <p>Pulvinar leo id risus pellentesque vestibulum. Sed diam libero, sodales eget sapien vel, porttitor
+                bibendum enim. Donec sed nibh vitae lorem porttitor blandit in nec ante. Pellentesque vitae metus ipsum.
+                Phasellus sed nunc ac sem malesuada condimentum. Etiam in aliquam lectus. Nam vel sapien diam. Donec
+                pharetra id arcu eget blandit. Proin imperdiet mattis augue in porttitor. Quisque tempus enim id
+                lobortis feugiat. Suspendisse tincidunt risus quis dolor fringilla blandit. Ut sed sapien at purus
+                lacinia porttitor. Nullam iaculis, felis a pretium ornare, dolor nisl semper tortor, vel sagittis lacus
+                est consequat eros. Sed id pretium nisl. Curabitur dolor nisl, laoreet vitae aliquam id.</p>
+        </div>
+        <hr>
+        <div id="section2">
+            <h2>Section 2</h2>
+            <p>Nullam hendrerit justo non leo aliquet imperdiet. Etiam in sagittis lectus. Suspendisse ultrices placerat
+                accumsan. Mauris quis dapibus orci. In dapibus velit blandit pharetra tincidunt. Quisque non sapien nec
+                lacus condimentum facilisis ut iaculis enim. Sed viverra interdum bibendum. Donec ac sollicitudin dolor.
+                Sed fringilla vitae lacus at rutrum. Phasellus congue vestibulum ligula sed consequat.</p>
+            <p>Enim arcu, interdum vel metus dignissim, venenatis feugiat purus. Nulla posuere orci ut leo sodales, sed
+                cursus dolor ornare. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus
+                mus. Etiam sit amet quam orci. Nulla sollicitudin lectus eget posuere venenatis. Sed vestibulum
+                elementum sagittis. Quisque tristique tortor quis feugiat sollicitudin. Ut pellentesque luctus
+                vulputate. Ut at odio ac erat blandit vehicula ut eget urna. In hac habitasse platea dictumst. Nullam ut
+                iaculis nibh, eget eleifend elit.</p>
+            <p>Convallis eget pretium eu, bibendum non leo. Proin suscipit purus adipiscing dolor gravida, in fermentum
+                sapien blandit. Praesent pellentesque ligula dui, in gravida turpis vehicula ac. Pellentesque hendrerit
+                nunc ut luctus hendrerit. Aliquam nec tincidunt urna. Ut interdum nec odio non interdum. Curabitur
+                ligula justo, dapibus non ligula tristique, dapibus tristique nulla. Aliquam pulvinar dapibus eros,
+                rutrum pretium urna iaculis ut. Nam est est, tempus id egestas et, viverra in dui. Aliquam gravida orci
+                tortor, sed congue justo ornare vel. Cras in quam consectetur eros varius scelerisque. Ut vel fermentum
+                purus. Nullam interdum blandit turpis, id pellentesque massa feugiat at. Ut sed lectus lectus.
+                Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla rutrum,
+                ante quis convallis ultricies, magna quam rhoncus erat, in lacinia libero magna a ipsum.</p>
+            <p>Fusce enim arcu, interdum vel metus dignissim, venenatis feugiat purus. Nulla posuere orci ut leo
+                sodales, sed cursus dolor ornare. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur
+                ridiculus mus. Etiam sit amet quam orci. Nulla sollicitudin lectus eget posuere venenatis. Sed
+                vestibulum elementum sagittis. Quisque tristique tortor quis feugiat sollicitudin. Ut pellentesque
+                luctus vulputate. Ut at odio ac erat blandit vehicula ut eget urna. In hac habitasse platea dictumst.
+                Nullam ut iaculis nibh, eget eleifend elit.</p>
+            <p>Tibulum consectetur scelerisque lacus, ac fermentum lorem convallis sed. Nam odio tortor, dictum quis
+                malesuada at, pellentesque vitae orci. Vivamus elementum, felis eu auctor lobortis, diam velit egestas
+                lacus, quis fermentum metus ante quis urna. Sed at facilisis libero. Cum sociis natoque penatibus et
+                magnis dis parturient montes, nascetur ridiculus mus. Vestibulum bibendum blandit dolor. Nunc orci
+                dolor, molestie nec nibh in, hendrerit tincidunt ante. Vivamus sem augue, hendrerit non sapien in,
+                mollis ornare augue.</p>
+            <p>Diam, id molestie magna. Aliquam consequat ipsum quis est dictum ultrices. Aenean nibh velit, fringilla
+                in diam id, blandit hendrerit lacus. Donec vehicula rutrum tellus eget fermentum. Pellentesque ac erat
+                et arcu ornare tincidunt. Aliquam erat volutpat. Vivamus lobortis urna quis gravida semper. In
+                condimentum, est a faucibus luctus, mi dolor cursus mi, id vehicula arcu risus a nibh. Pellentesque
+                blandit sapien lacus, vel vehicula nunc feugiat sit amet.</p>
+            <p>Nec est consectetur vehicula. Nullam ultrices nisl risus, in viverra libero egestas sit amet. Etiam
+                porttitor dolor non eros pulvinar malesuada. Vestibulum sit amet est mollis nulla tempus aliquet.
+                Praesent luctus hendrerit arcu non laoreet. Morbi consequat placerat magna, ac ornare odio sagittis sed.
+                Donec vitae ullamcorper purus. Vivamus non metus ac justo porta volutpat.</p>
+        </div>
+        <hr>
+        <div id="section3">
+            <h2>Contact</h2>
+            <div class="form-body">
+                <div class="row">
+                    <div class="form-holder">
+                        <div class="form-content">
+                            <div class="form-items">
+                                <h3>Formular de inregistrare</h3>
+                                <p>Va rugam sa completati datele de mai jos.</p>
+                                <form class="requires-validation" novalidate>
+
+                                    <div class="col-md-12">
+                                        <input class="form-control" type="text" name="name" placeholder="Nume" required>
+                                        <div class="valid-feedback">Campul Nume este valid!</div>
+                                        <div class="invalid-feedback">Campul Nume trebuie completat corect!</div>
+                                    </div>
+
+                                    <div class="col-md-12">
+                                        <input class="form-control" type="email" name="email" placeholder="Email"
+                                            required>
+                                        <div class="valid-feedback">Campul Email este valid!</div>
+                                        <div class="invalid-feedback">Campul Email trebuie completat corect!</div>
+                                    </div>
+
+                                    <div class="col-md-12">
+                                        <select name="jdorit" class="form-select mt-3" required>
+                                            <option selected disabled value="">Job dorit</option>
+                                            <option value="jweb">Junior Web Developer</option>
+                                            <option value="sweb">Senior Web Developer</option>
+                                            <option value="pmanager">Project Manager</option>
+                                        </select>
+                                        <div class="valid-feedback">Campul Job dorit este valid!</div>
+                                        <div class="invalid-feedback">Va rugam selectati o optiune!</div>
+                                    </div>
+
+
+                                    <div class="col-md-12">
+                                        <input class="form-control" type="password" name="password" placeholder="Parola"
+                                            required>
+                                        <div class="valid-feedback">Campul Parola este valid!</div>
+                                        <div class="invalid-feedback">Campul Parola este obligatoriu!</div>
+                                    </div>
+
+
+                                    <div class="col-md-12 mt-3">
+                                        <label class="mb-3 mr-1" for="gender">Sex: </label>
+
+                                        <input type="radio" class="btn-check" name="gender" id="male" autocomplete="off"
+                                            required>
+                                        <label class="btn btn-sm btn-outline-secondary" for="male">Masculin</label>
+
+                                        <input type="radio" class="btn-check" name="gender" id="female"
+                                            autocomplete="off" required>
+                                        <label class="btn btn-sm btn-outline-secondary" for="female">Feminin</label>
+
+                                        <input type="radio" class="btn-check" name="gender" id="secret"
+                                            autocomplete="off" required>
+                                        <label class="btn btn-sm btn-outline-secondary" for="secret">Secret</label>
+                                        <div class="valid-feedback mv-up">Campul Sex este valid!</div>
+                                        <div class="invalid-feedback mv-up">Va rugam selectati o optiune!</div>
+                                    </div>
+
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="invalidCheck"
+                                            required>
+                                        <label class="form-check-label">Confirm ca datele sunt corecte</label>
+                                        <div class="invalid-feedback">Va rugam sa confirmati ca datele sunt corecte!
+                                        </div>
+                                    </div>
+
+
+                                    <div class="form-button mt-3">
+                                        <button id="submit" type="submit"
+                                            class="btn btn-primary">Inregistreaza-te</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <hr>
+        <h2>Section 4</h2>
+        <p>Nam eget purus nec est consectetur vehicula. Nullam ultrices nisl risus, in viverra libero egestas sit amet.
+        </p>
+        <div id="section4dot1">
+            <h3>Section 4.1</h3>
+            <p>In mauris nunc, convallis eget pretium eu, bibendum non leo. Proin suscipit purus adipiscing dolor
+                gravida, in fermentum sapien blandit. Praesent pellentesque ligula dui, in gravida turpis vehicula ac.
+                Pellentesque hendrerit nunc ut luctus hendrerit. Aliquam nec tincidunt urna. Ut interdum nec odio non
+                interdum. Curabitur ligula justo, dapibus non ligula tristique, dapibus tristique nulla. Aliquam
+                pulvinar dapibus eros, rutrum pretium urna iaculis ut. Nam est est, tempus id egestas et, viverra in
+                dui. Aliquam gravida orci tortor, sed congue justo ornare vel. Cras in quam consectetur eros varius
+                scelerisque. Ut vel fermentum purus. Nullam interdum blandit turpis, id pellentesque massa feugiat at.
+                Ut sed lectus lectus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia
+                Curae; Nulla rutrum, ante quis convallis ultricies, magna quam rhoncus erat..</p>
+            <p>Sed vitae lobortis diam, id molestie magna. Aliquam consequat ipsum quis est dictum ultrices. Aenean nibh
+                velit, fringilla in diam id, blandit hendrerit lacus. Donec vehicula rutrum tellus eget fermentum.
+                Pellentesque ac erat et arcu ornare tincidunt. Aliquam erat volutpat. Vivamus lobortis urna quis gravida
+                semper. In condimentum, est a faucibus luctus, mi dolor cursus mi, id vehicula arcu risus a nibh.
+                Pellentesque blandit sapien lacus, vel vehicula nunc feugiat sit amet.</p>
+            <p>Bvtae lobortis diam, id molestie magna. Aliquam consequat ipsum quis est dictum ultrices. Aenean nibh
+                velit, fringilla in diam id, blandit hendrerit lacus. Donec vehicula rutrum tellus eget fermentum.
+                Pellentesque ac erat et arcu ornare tincidunt. Aliquam erat volutpat. Vivamus lobortis urna quis gravida
+                semper. In condimentum, est a faucibus luctus, mi dolor cursus mi, id vehicula arcu risus a nibh.
+                Pellentesque blandit sapien lacus, vel vehicula nunc feugiat sit amet.</p>
+            <p>Gonvallis eget pretium eu, bibendum non leo. Proin suscipit purus adipiscing dolor gravida, in fermentum
+                sapien blandit. Praesent pellentesque ligula dui, in gravida turpis vehicula ac. Pellentesque hendrerit
+                nunc ut luctus hendrerit. Aliquam nec tincidunt urna. Ut interdum nec odio non interdum. Curabitur
+                ligula justo, dapibus non ligula tristique, dapibus tristique nulla. Aliquam pulvinar dapibus eros,
+                rutrum pretium urna iaculis ut. Nam est est, tempus id egestas et, viverra in dui. Aliquam gravida orci
+                tortor, sed congue justo ornare vel. Cras in quam consectetur eros varius scelerisque. Ut vel fermentum
+                purus. Nullam interdum blandit turpis, id pellentesque massa feugiat at. Ut sed lectus lectus.
+                Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla rutrum,
+                ante quis convallis ultricies, magna quam rhoncus erat, in lacinia libero magna a ipsum.</p>
+            <p>Eget purus nec est consectetur vehicula. Nullam ultrices nisl risus, in viverra libero egestas sit amet.
+                Etiam porttitor dolor non eros pulvinar malesuada. Vestibulum sit amet est mollis nulla tempus aliquet.
+                Praesent luctus hendrerit arcu non laoreet. Morbi consequat placerat magna, ac ornare odio sagittis sed.
+                Donec vitae ullamcorper purus. Vivamus non metus ac justo porta volutpat.</p>
+        </div>
+        <div id="section4dot2">
+            <h3>Section 4.2</h3>
+            <p>Pellentesque viverra, velit eu blandit viverra, justo nulla vestibulum nisl, at egestas ligula augue non
+                ipsum. Aliquam non posuere metus, sed luctus erat. Vivamus malesuada libero quis sem elementum
+                condimentum. Vestibulum interdum, turpis nec venenatis fringilla, odio elit hendrerit dui, a commodo
+                metus tortor a eros. Suspendisse egestas neque vitae laoreet pellentesque. Donec accumsan, elit quis
+                rhoncus fringilla, quam leo feugiat velit, nec hendrerit purus diam aliquet neque. Pellentesque
+                imperdiet sed erat eu varius.</p>
+            <p>Wallis eget pretium eu, bibendum non leo. Proin suscipit purus adipiscing dolor gravida, in fermentum
+                sapien blandit. Praesent pellentesque ligula dui, in gravida turpis vehicula ac. Pellentesque hendrerit
+                nunc ut luctus hendrerit. Aliquam nec tincidunt urna. Ut interdum nec odio non interdum. Curabitur
+                ligula justo, dapibus non ligula tristique, dapibus tristique nulla. Aliquam pulvinar dapibus eros,
+                rutrum pretium urna iaculis ut. Nam est est, tempus id egestas et, viverra in dui. Aliquam gravida orci
+                tortor, sed congue justo ornare vel. Cras in quam consectetur eros varius scelerisque. Ut vel fermentum
+                purus. Nullam interdum blandit turpis, id pellentesque massa feugiat at. Ut sed lectus lectus.
+                Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla rutrum,
+                ante quis convallis ultricies, magna quam rhoncus erat, in lacinia libero magna a ipsum.</p>
+            <p>Trae lobortis diam, id molestie magna. Aliquam consequat ipsum quis est dictum ultrices. Aenean nibh
+                velit, fringilla in diam id, blandit hendrerit lacus. Donec vehicula rutrum tellus eget fermentum.
+                Pellentesque ac erat et arcu ornare tincidunt. Aliquam erat volutpat. Vivamus lobortis urna quis gravida
+                semper. In condimentum, est a faucibus luctus, mi dolor cursus mi, id vehicula arcu risus a nibh.
+                Pellentesque blandit sapien lacus, vel vehicula nunc feugiat sit amet. In hac habitasse platea dictumst.
+                Aliquam porta nibh nulla, et mattis turpis placerat eget. Pellentesque dui diam, pellentesque vel
+                gravida id, accumsan eu magna. Sed a semper arcu, ut dignissim leo.</p>
+            <p>Suspendisse a orci facilisis, dignissim tortor vitae, ultrices mi. Vestibulum a iaculis lacus. Phasellus
+                vitae convallis ligula, nec volutpat tellus. Vivamus scelerisque mollis nisl, nec vehicula elit egestas
+                a. Sed luctus metus id mi gravida, faucibus convallis neque pretium. Maecenas quis sapien ut leo
+                fringilla tempor vitae sit amet leo. Donec imperdiet tempus placerat. Pellentesque pulvinar ultrices
+                nunc sed ultrices. Morbi vel mi pretium, fermentum lacus et, viverra tellus. Phasellus sodales libero
+                nec dui convallis, sit amet fermentum sapien auctor. Vestibulum ante ipsum primis in faucibus orci
+                luctus et ultrices posuere cubilia Curae; Sed eu elementum nibh, quis varius libero.</p>
+            <p>Morbi sed fermentum ipsum. Morbi a orci vulputate tortor ornare blandit a quis orci. Donec aliquam
+                sodales gravida. In ut ullamcorper nisi, ac pretium velit. Vestibulum vitae lectus volutpat, consequat
+                lorem sit amet, pulvinar tellus. In tincidunt vel leo eget pulvinar. Curabitur a eros non lacus
+                malesuada aliquam. Praesent et tempus odio. Integer a quam nunc. In hac habitasse platea dictumst.
+                Aliquam porta nibh nulla, et mattis turpis placerat eget. Pellentesque dui diam, pellentesque vel
+                gravida id, accumsan eu magna. Sed a semper arcu, ut dignissim leo.</p>
+        </div>
+        <div id="section4dot3">
+            <h3>Section 4.3</h3>
+            <p>Fusce enim arcu, interdum vel metus dignissim, venenatis feugiat purus. Nulla posuere orci ut leo
+                sodales, sed cursus dolor ornare. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur
+                ridiculus mus. Etiam sit amet quam orci. Nulla sollicitudin lectus eget posuere venenatis. Sed
+                vestibulum elementum sagittis. Quisque tristique tortor quis feugiat sollicitudin. Ut pellentesque
+                luctus vulputate. Ut at odio ac erat blandit vehicula ut eget urna. In hac habitasse platea dictumst.
+                Nullam ut iaculis nibh, eget eleifend elit.</p>
+            <p>Unvallis eget pretium eu, bibendum non leo. Proin suscipit purus adipiscing dolor gravida, in fermentum
+                sapien blandit. Praesent pellentesque ligula dui, in gravida turpis vehicula ac. Pellentesque hendrerit
+                nunc ut luctus hendrerit. Aliquam nec tincidunt urna. Ut interdum nec odio non interdum. Curabitur
+                ligula justo, dapibus non ligula tristique, dapibus tristique nulla. Aliquam pulvinar dapibus eros,
+                rutrum pretium urna iaculis ut. Nam est est, tempus id egestas et, viverra in dui. Aliquam gravida orci
+                tortor, sed congue justo ornare vel. Cras in quam consectetur eros varius scelerisque. Ut vel fermentum
+                purus. Nullam interdum blandit turpis, id pellentesque massa feugiat at. Ut sed lectus lectus.
+                Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla rutrum,
+                ante quis convallis ultricies, magna quam rhoncus erat, in lacinia libero magna a ipsum.</p>
+            <p>Lobortis diam, id molestie magna. Aliquam consequat ipsum quis est dictum ultrices. Aenean nibh velit,
+                fringilla in diam id, blandit hendrerit lacus. Donec vehicula rutrum tellus eget fermentum. Pellentesque
+                ac erat et arcu ornare tincidunt. Aliquam erat volutpat. Vivamus lobortis urna quis gravida semper. In
+                condimentum, est a faucibus luctus, mi dolor cursus mi, id vehicula arcu risus a nibh. Pellentesque
+                blandit sapien lacus, vel vehicula nunc feugiat sit amet.</p>
+            <p>Nunc, convallis eget pretium eu, bibendum non leo. Proin suscipit purus adipiscing dolor gravida, in
+                fermentum sapien blandit. Praesent pellentesque ligula dui, in gravida turpis vehicula ac. Pellentesque
+                hendrerit nunc ut luctus hendrerit. Aliquam nec tincidunt urna. Ut interdum nec odio non interdum.
+                Curabitur ligula justo, dapibus non ligula tristique, dapibus tristique nulla. Aliquam pulvinar dapibus
+                eros, rutrum pretium urna iaculis ut. Nam est est, tempus id egestas et, viverra in dui. Aliquam gravida
+                orci tortor, sed congue justo ornare vel. Cras in quam consectetur eros varius scelerisque. Ut vel
+                fermentum purus. Nullam interdum blandit turpis, id pellentesque massa feugiat at. Ut sed lectus lectus.
+                Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla rutrum,
+                ante quis convallis ultricies, magna quam rhoncus erat..</p>
+            <p>Itae lobortis diam, id molestie magna. Aliquam consequat ipsum quis est dictum ultrices. Aenean nibh
+                velit, fringilla in diam id, blandit hendrerit lacus. Donec vehicula rutrum tellus eget fermentum.
+                Pellentesque ac erat et arcu ornare tincidunt. Aliquam erat volutpat. Vivamus lobortis urna quis gravida
+                semper. In condimentum, est a faucibus luctus, mi dolor cursus mi, id vehicula arcu risus a nibh.
+                Pellentesque blandit sapien lacus, vel vehicula nunc feugiat sit amet.</p>
+        </div>
+        <hr>
+        <div id="section5">
+            <h2>Section 5</h2>
+            <p>Meget purus nec est consectetur vehicula. Nullam ultrices nisl risus, in viverra libero egestas sit amet.
+                Etiam porttitor dolor non eros pulvinar malesuada. Vestibulum sit amet est mollis nulla tempus aliquet.
+                Praesent luctus hendrerit arcu non laoreet. Morbi consequat placerat magna, ac ornare odio sagittis sed.
+                Donec vitae ullamcorper purus. Vivamus non metus ac justo porta volutpat. Malesuada. Vestibulum sit amet
+                est mollis nulla tempus aliquet. Praesent luctus hendrerit arcu non laoreet. Morbi consequat placerat
+                magna, ac ornare odio sagittis sed. Donec vitae ullamcorper purus. Vivamus non metus ac justo porta
+                volutpat. Integer a quam nunc. In hac habitasse platea dictumst. Aliquam porta nibh nulla, et mattis
+                turpis placerat eget. Pellentesque dui diam, pellentesque vel gravida id, accumsan eu magna. Sed a
+                semper arcu, ut dignissim leo.</p>
+            <p>Vamus mattis accumsan erat, vel convallis risus pretium nec. Integer nunc nulla, viverra ut sem non,
+                scelerisque vehicula arcu. Fusce bibendum convallis augue sit amet lobortis. Cras porta urna turpis,
+                sodales lobortis purus adipiscing id. Maecenas ullamcorper, turpis suscipit pellentesque fringilla,
+                massa lacus pulvinar mi, nec dignissim velit arcu eget purus. Nam at dapibus tellus, eget euismod nisl.
+                Ut eget venenatis sapien. Vivamus vulputate varius mauris, vel varius nisl facilisis ac. Nulla aliquet
+                justo a nibh ornare, eu congue neque rutrum. Pellentesque pulvinar ultrices nunc sed ultrices. Morbi vel
+                mi pretium, fermentum lacus et, viverra tellus. Phasellus sodales libero nec dui convallis, sit amet
+                fermentum sapien auctor. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere
+                cubilia Curae; Sed eu elementum nibh, quis varius libero.</p>
+            <p>Suspendisse a orci facilisis, dignissim tortor vitae, ultrices mi. Vestibulum a iaculis lacus. Phasellus
+                vitae convallis ligula, nec volutpat tellus. Vivamus scelerisque mollis nisl, nec vehicula elit egestas
+                a. Sed luctus metus id mi gravida, faucibus convallis neque pretium. Maecenas quis sapien ut leo
+                fringilla tempor vitae sit amet leo. Donec imperdiet tempus placerat. Pellentesque pulvinar ultrices
+                nunc sed ultrices. Morbi vel mi pretium, fermentum lacus et, viverra tellus. Phasellus sodales libero
+                nec dui convallis, sit amet fermentum sapien auctor. Vestibulum ante ipsum primis in faucibus orci
+                luctus et ultrices posuere cubilia Curae; Sed eu elementum nibh, quis varius libero.</p>
+            <p>Orbised fermentum ipsum. Morbi a orci vulputate tortor ornare blandit a quis orci. Donec aliquam sodales
+                gravida. In ut ullamcorper nisi, ac pretium velit. Vestibulum vitae lectus volutpat, consequat lorem sit
+                amet, pulvinar tellus. In tincidunt vel leo eget pulvinar. Curabitur a eros non lacus malesuada aliquam.
+                Praesent et tempus odio. Integer a quam nunc. In hac habitasse platea dictumst. Aliquam porta nibh
+                nulla, et mattis turpis placerat eget. Pellentesque dui diam, pellentesque vel gravida id, accumsan eu
+                magna. Sed a semper arcu, ut dignissim leo.</p>
+            <p>Aliquam consequat ipsum quis est dictum ultrices. Aenean nibh velit, fringilla in diam id, blandit
+                hendrerit lacus. Donec vehicula rutrum tellus eget fermentum. Pellentesque ac erat et arcu ornare
+                tincidunt. Vitae lobortis diam, id molestie magna. Aliquam consequat ipsum quis est dictum ultrices.
+                Aenean nibh velit, fringilla in diam id, blandit hendrerit lacus. Donec vehicula rutrum tellus eget
+                fermentum. Pellentesque ac erat et arcu ornare tincidunt. Aliquam erat volutpat. Vivamus lobortis urna
+                quis gravida semper. In condimentum, est a faucibus luctus, mi dolor cursus mi, id vehicula arcu risus a
+                nibh. Pellentesque blandit sapien lacus, vel vehicula nunc feugiat sit amet.</p>
+            <p>Etiam porttitor dolor non eros pulvinar malesuada. Vestibulum sit amet est mollis nulla tempus aliquet.
+                Praesent luctus hendrerit arcu non laoreet. Morbi consequat placerat magna, ac ornare odio sagittis sed.
+                Donec vitae ullamcorper purus. Vivamus non metus ac justo porta volutpat. Meget purus nec est
+                consectetur vehicula. Nullam ultrices nisl risus, in viverra libero egestas sit amet. Etiam porttitor
+                dolor non eros pulvinar malesuada. Vestibulum sit amet est mollis nulla tempus aliquet. Praesent luctus
+                hendrerit arcu non laoreet. Morbi consequat placerat magna, ac ornare odio sagittis sed. Donec vitae
+                ullamcorper purus. Vivamus non metus ac justo porta volutpat.</p>
+            <p>Maecenas ullamcorper, turpis suscipit pellentesque fringilla, massa lacus pulvinar mi, nec dignissim
+                velit arcu eget purus. Nam at dapibus tellus, eget euismod nisl. Ut eget venenatis sapien. Vivamus
+                vulputate varius mauris, vel varius nisl facilisis ac. Nulla aliquet justo a nibh ornare, eu congue
+                neque rutrum. Vamus mattis accumsan erat, vel convallis risus pretium nec. Integer nunc nulla, viverra
+                ut sem non, scelerisque vehicula arcu. Fusce bibendum convallis augue sit amet lobortis. Cras porta urna
+                turpis, sodales lobortis purus adipiscing id. Maecenas ullamcorper, turpis suscipit pellentesque
+                fringilla, massa lacus pulvinar mi, nec dignissim velit arcu eget purus. Nam at dapibus tellus, eget
+                euismod nisl. Ut eget venenatis sapien. Vivamus vulputate varius mauris, vel varius nisl facilisis ac.
+                Nulla aliquet justo a nibh ornare, eu congue neque rutrum.</p>
+            <p>Suspendisse a orci facilisis, dignissim tortor vitae, ultrices mi. Vestibulum a iaculis lacus. Phasellus
+                vitae convallis ligula, nec volutpat tellus. Vivamus scelerisque mollis nisl, nec vehicula elit egestas
+                a. Sed luctus metus id mi gravida, faucibus convallis neque pretium. Maecenas quis sapien ut leo
+                fringilla tempor vitae sit amet leo. Donec imperdiet tempus placerat. Pellentesque pulvinar ultrices
+                nunc sed ultrices. Morbi vel mi pretium, fermentum lacus et, viverra tellus. Phasellus sodales libero
+                nec dui convallis, sit amet fermentum sapien auctor. Vestibulum ante ipsum primis in faucibus orci
+                luctus et ultrices posuere cubilia Curae; Sed eu elementum nibh, quis varius libero.</p>
+            <p>Fermentum ipsum. Morbi a orci vulputate tortor ornare blandit a quis orci. Donec aliquam sodales gravida.
+                In ut ullamcorper nisi, ac pretium velit. Vestibulum vitae lectus volutpat, consequat lorem sit amet,
+                pulvinar tellus. In tincidunt vel leo eget pulvinar. Curabitur a eros non lacus malesuada aliquam.
+                Praesent et tempus odio. Integer a quam nunc. In hac habitasse platea dictumst. Aliquam porta nibh
+                nulla, et mattis turpis placerat eget. Pellentesque dui diam, pellentesque vel gravida id, accumsan eu
+                magna.</p>
+        </div>
+    </div>
+
+
+    <!-- Footer -->
+    <footer class="text-center text-lg-start text-white" style="background-color: #1c2331">
+        <!-- Section: Social media -->
+        <section class="d-flex justify-content-between p-4" style="background-color: #6351ce">
+            <!-- Left -->
+            <div class="me-5">
+                <span>Get connected with us on social networks:</span>
+            </div>
+            <!-- Left -->
+
+            <!-- Right -->
+            <div>
+                <a href="" class="text-white me-4"><i class="fab fa-facebook-f"></i></a>
+                <a href="" class="text-white me-4"><i class="fab fa-twitter"></i></a>
+                <a href="" class="text-white me-4"><i class="fab fa-google"></i></a>
+                <a href="" class="text-white me-4"><i class="fab fa-instagram"></i></a>
+                <a href="" class="text-white me-4"><i class="fab fa-linkedin"></i></a>
+                <a href="" class="text-white me-4"><i class="fab fa-github"></i></a>
+            </div>
+            <!-- Right -->
+        </section>
+        <!-- Section: Social media -->
+
+        <!-- Section: Links  -->
+        <section class="">
+            <div class="container text-center text-md-start mt-5">
+                <!-- Grid row -->
+                <div class="row mt-3">
+                    <!-- Grid column -->
+                    <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                        <!-- Content -->
+                        <h6 class="text-uppercase fw-bold">Company name</h6>
+                        <hr class="mb-4 mt-0 d-inline-block mx-auto"
+                            style="width: 60px; background-color: #7c4dff; height: 2px" />
+                        <p>
+                            Here you can use rows and columns to organize your footer
+                            content. Lorem ipsum dolor sit amet, consectetur adipisicing
+                            elit.
+                        </p>
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                        <!-- Links -->
+                        <h6 class="text-uppercase fw-bold">Products</h6>
+                        <hr class="mb-4 mt-0 d-inline-block mx-auto"
+                            style="width: 60px; background-color: #7c4dff; height: 2px" />
+                        <p>
+                            <a href="#!" class="text-white">MDBootstrap</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-white">MDWordPress</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-white">BrandFlow</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-white">Bootstrap Angular</a>
+                        </p>
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                        <!-- Links -->
+                        <h6 class="text-uppercase fw-bold">Useful links</h6>
+                        <hr class="mb-4 mt-0 d-inline-block mx-auto"
+                            style="width: 60px; background-color: #7c4dff; height: 2px" />
+                        <p>
+                            <a href="#!" class="text-white">Your Account</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-white">Become an Affiliate</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-white">Shipping Rates</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-white">Help</a>
+                        </p>
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                        <!-- Links -->
+                        <h6 class="text-uppercase fw-bold">Contact</h6>
+                        <hr class="mb-4 mt-0 d-inline-block mx-auto"
+                            style="width: 60px; background-color: #7c4dff; height: 2px" />
+                        <p><i class="fas fa-home mr-3"></i> Bucuresti</p>
+                        <p><i class="fas fa-envelope mr-3"></i> info@example.com</p>
+                        <p><i class="fas fa-phone mr-3"></i> 234 567 88</p>
+                        <p><i class="fas fa-print mr-3"></i> 234 567 89</p>
+                    </div>
+                    <!-- Grid column -->
+                </div>
+                <!-- Grid row -->
+            </div>
+        </section>
+        <!-- Section: Links  -->
+
+        <!-- Copyright -->
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+            © 2022 Copyright:
+            <a class="text-white" href="#">LINKACADEMY</a>
+        </div>
+        <!-- Copyright -->
+    </footer>
+    <!-- Footer -->
+
+
+
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="modalForm" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Bootstrap 5 Modal Form</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" name="email" placeholder="Email" />
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Parola</label>
+                            <input type="password" class="form-control" id="parola" name="parola"
+                                placeholder="Parola" />
+                        </div>
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" class="form-check-input" id="rememberMe" />
+                            <label class="form-check-label" for="rememberMe">Tine-ma minte</label>
+                        </div>
+                        <div class="modal-footer d-block">
+                            <p class="float-start">Nu ai cont? <a href="#">Sign Up</a></p>
+                            <button type="submit" class="btn btn-warning float-end">Trimite</button>
+                        </div>
+                    </form>
+                    <br> <br>
+                    <!-- Pas 3 The JS SDK Login Button -->
+
+                    <div class="fb-login-button" data-width="" data-size="large" data-button-type="login_with"
+                        data-layout="default" data-auto-logout-link="true" data-use-continue-as="false"></div>
+
+                    <div id="status"></div>
+                    <!-- END Pas 3 The JS SDK Login Button -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Pas1 FACEBOOK DSK -->
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous"
+        src="https://connect.facebook.net/ro_RO/sdk.js#xfbml=1&version=v13.0&appId=1416909435409641&autoLogAppEvents=1"
+        nonce="E5RU9Epd"></script>
+    <!-- END FACEBOOK DSK -->
+    <!--  Pas2 FACEBOOK APP-->
+    <script src="./js/facebook_login.js"></script>
+    <!--  END Pas2 FACEBOOK APP-->
+
+    <!-- Import jquery cdn -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+        </script>
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+    <script src="./js/main.js"></script>
+    <script src="./js/validare.js"></script>
+</body>
+
+</html>

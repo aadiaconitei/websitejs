@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="..//app1/ap1.css">
+    <style>
+        .carousel-item {
+            min-height: 280px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="p-5 bg-warning">
+        <h1>Demo Header</h1>
+    </div>
+
+    <nav id="navbar_top" class="navbar  navbar-expand-lg navbar-dark bg-primary">
+        <div class="container-fluid">
+            <a href="#" class="navbar-brand">
+                <img src="./img/logo.svg" height="28" alt="Logo">
+            </a>
+            <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav">
+                    <a href="index.html#section1" class="nav-item nav-link active">Acasa</a>
+                    <a href="index.html#section2" class="nav-item nav-link">Despre</a>
+                    <a href="produse.html" class="nav-item nav-link">Produse</a>
+                    <a href="index.html#section3" class="nav-item nav-link">Contact</a>
+
+                </div>
+                <div class="navbar-nav ms-auto">
+                    <a data-bs-toggle="modal" data-bs-target="#modalForm" data-email="adrian2@demo.com"
+                        data-nume="Adrian2" href="#" class="nav-item nav-link">Login</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="container-lg my-3">
+        <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+            <!-- Carousel indicators -->
+            <ol class="carousel-indicators">
+                <li data-bs-target="#myCarousel" data-bs-slide-to="0" class="active"></li>
+                <li data-bs-target="#myCarousel" data-bs-slide-to="1"></li>
+                <li data-bs-target="#myCarousel" data-bs-slide-to="2"></li>
+            </ol>
+
+            <!-- Wrapper for carousel items -->
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="./img/slide1.png" class="d-block w-100" alt="Slide 1">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>First slide label</h5>
+                        <p>Some demonstrative placeholder content for the first slide.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="./img/slide2.png" class="d-block w-100" alt="Slide 2">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Second slide label</h5>
+                        <p>Some demonstrative placeholder content for the second slide.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="./img/slide3.png" class="d-block w-100" alt="Slide 3">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Third slide label</h5>
+                        <p>Some demonstrative placeholder content for the third slide.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Carousel controls -->
+            <a class="carousel-control-prev" href="#myCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </a>
+            <a class="carousel-control-next" href="#myCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </a>
+        </div>
+
+        <div class="alert alert-info mt-3">
+            Carousel caption will be hidden on smaller viewport, but become visible on medium devices (i.e. viewport
+            width &ge;768px). Change orientation of this HTML editor to see how it works.
+        </div>
+    </div>
+    <!-- Demo Content -->
+    <div class="container">
+
+        <section class="section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="text-center">
+                            <ul class="col container-filter portfolioFilte list-unstyled mb-0" id="filter">
+                                <li><a class="categories" data-filter="*">All</a></li>
+                                <li><a class="categories active" data-filter=".mascara">mascara</a></li>
+                                <li><a class="categories" data-filter=".bronzer">bronzer</a></li>
+                                <li><a class="categories" data-filter=".blush">blush</a></li>
+                                <li><a class="categories" data-filter=".foundation">foundation</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="port portfolio-masonry mt-4">
+                    <div id="portfolioContainer" class="portfolioContainer row foundation">
+
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="modalForm" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Bootstrap 5 Modal Form</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" name="email" placeholder="Email" />
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Parola</label>
+                            <input type="password" class="form-control" id="parola" name="parola"
+                                placeholder="Parola" />
+                        </div>
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" class="form-check-input" id="rememberMe" />
+                            <label class="form-check-label" for="rememberMe">Tine-ma minte</label>
+                        </div>
+                        <div class="modal-footer d-block">
+                            <p class="float-start">Nu ai cont? <a href="#">Sign Up</a></p>
+                            <button type="submit" class="btn btn-warning float-end">Trimite</button>
+                        </div>
+                    </form>
+                    <br> <br>
+                    <!-- Pas 3 The JS SDK Login Button -->
+
+                    <div class="fb-login-button" data-width="" data-size="large" data-button-type="login_with"
+                        data-layout="default" data-auto-logout-link="true" data-use-continue-as="false"></div>
+
+                    <div id="status"></div>
+                    <!-- END Pas 3 The JS SDK Login Button -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Pas1 FACEBOOK DSK -->
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous"
+        src="https://connect.facebook.net/ro_RO/sdk.js#xfbml=1&version=v13.0&appId=1416909435409641&autoLogAppEvents=1"
+        nonce="E5RU9Epd"></script>
+    <!-- END FACEBOOK DSK -->
+    <!--  Pas2 FACEBOOK APP-->
+    <script src="./js/facebook_login.js"></script>
+    <!--  END Pas2 FACEBOOK APP-->
+
+    <div id="loader" class="lds-dual-ring hidden overlay"></div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js"
+        integrity="sha512-Zq2BOxyhvnRFXu0+WE6ojpZLOU2jdnqbrM1hmVdGzyeCa1DgM3X5Q4A/Is9xA1IkbUeDd7755dNNI/PzSf2Pew=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+    <script src="./js/main.js"></script>
+    <script src="../app1/api.js"></script>
+
+</body>
+
+</html>

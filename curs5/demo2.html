@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+         function info() {
+            console.log("Am terinat treaba!");
+        }
+        function somn() {
+            console.log("Merg la culcare!");
+        }
+        function task(aa) {
+            for (let i = 0; i < 15; i++) {
+                console.log("Am facut task-ul: ", i);
+            }
+            aa();// se executa functia care reprezinta obiectul
+        }
+        task(info); 
+        task(somn);
+    </script>
+</body>
+</html>

@@ -31,7 +31,7 @@
         //     console.log('Hai sa ne cunoastem!');
         //     getNameP('Ion').then(function (res) {
         //         console.log(res);
-        //         return getNameP('Dan').then(function (res) {
+        //         return getNameP('Da').then(function (res) {
         //             console.log(res);
         //             return getNameP('Adi').then(function (res){
         //                 console.log(res);
@@ -50,7 +50,7 @@
         // }
         // let salut = getSalut('Mihai');
         // console.log(salut);
-        // // Pas 1
+        // Pas 1
         // async function getName(nume) {
         //     return `Numele meu este ${nume}`;
         // }
@@ -61,7 +61,7 @@
 
         // })
 
-        // //Pas 2
+        //Pas 2
         // async function getAllNames() {
         //     console.log('Hai sa ne cunoastem!');
         //     let myName = await getName('Mihai');
@@ -86,7 +86,7 @@
             let myName = getName('Mihai');
             let myName2 =  getName('Ionut');
             let myName3 =  getName('Razvan');
-            let arr = await Promise.all([myName, myName3,myName2]);
+            let arr = await Promise.all([myName2, myName, ,myName3]);
             console.log(arr);
             
         }

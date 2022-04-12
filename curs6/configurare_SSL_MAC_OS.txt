@@ -1,0 +1,47 @@
+1. Create ssl directory
+mkdir /etc/apache2/ssl
+cd /etc/apache2/ssl
+2. Create server key, just press enter when asked for password.
+
+sudo ssh-keygen -f server.key
+3. Create certificate request file. Enter info or leave blank when asked various questions.
+
+sudo openssl req -new -key server.key -out request.csr
+4. Create SSL certificate file from the request file.
+
+sudo openssl x509 -req -days 99999 -in request.csr -signkey server.key -out server.crt
+5. Open /etc/apache2/httpd.conf, make sure you have these 3 lines in it. If not, add them. If there is but with # sign at the beginning, remove the # sign.
+
+Listen 443
+LoadModule ssl_module libexec/apache2/mod_ssl.so
+Include /private/etc/apache2/extra/httpd-ssl.conf
+6. Open /etc/apache2/extra/httpd-ssl.conf search for lines with SSLCertificateFile and SSLCertificateKeyFile, update them to the below
+
+SSLCertificateFile "/etc/apache2/ssl/server.crt"
+SSLCertificateKeyFile "/etc/apache2/ssl/server.key"
+7. Configure vhosts to enable https 443, open /etc/apache2/extra/httpd-vhosts.conf and the below to it. Replace the value for ServerName, DocumentRoot and Directory path to yours.
+
+<VirtualHost 127.0.0.1:80>
+ServerName test.com
+DocumentRoot "/Users/shunter/Sites/test"
+<Directory "/Users/shunter/Sites/test">
+    Order allow,deny
+    Allow from all
+</Directory>
+</VirtualHost>
+<VirtualHost 127.0.0.1:443>
+ServerName test.com
+DocumentRoot "/Users/shunter/Sites/test"
+SSLEngine on
+SSLCipherSuite ALL:!ADH:!EXPORT56:RC4+RSA:+HIGH:+MEDIUM:+LOW:+SSLv2:+EXP:+eNULL
+SSLCertificateFile /etc/apache2/ssl/server.crt
+SSLCertificateKeyFile /etc/apache2/ssl/server.key
+<Directory "/Users/shunter/Sites/test">
+    Order allow,deny
+    Allow from all
+</Directory>
+</VirtualHost>
+8. Edit host file for your sever name, open /etc/hosts and add this line to it
+127.0.0.1 test.com
+9. Restart apache
+sudo /usr/sbin/apachectl restart

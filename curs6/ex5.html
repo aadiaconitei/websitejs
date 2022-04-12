@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>
+        5. Ce afiseaza urmatorul cod (Microtask Chain)?
+    </h1>
+    <pre>
+        Promise.resolve()
+        .then(function a() {
+            Promise.resolve().then(function c() { 
+                console.log('Promisiunea 1 este executata');
+            });
+        })
+        .then(function b() {
+            Promise.resolve().then(function d() {
+                console.log('Promisiunea 2 este executata');
+             });
+        });
+    </pre>
+    <script>
+        Promise.resolve()
+            .then(function a() {
+                Promise.resolve().then(function c() { 
+                    console.log('Promisiunea 1 este executata');
+                });
+            })
+            .then(function b() {
+                Promise.resolve().then(function d() {
+                    console.log('Promisiunea 2 este executata');
+                 });
+            });
+    </script>
+</body>
+
+</html>

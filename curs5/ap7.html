@@ -38,16 +38,18 @@
                 }, fiveSeconds);
             });
 
-            // var interval = setInterval(function () {
-            //     log("I still don't know if I'll get it...");
-            // }, 1000);
+            var interval = setInterval(function () {
+                log("I still don't know if I'll get it...");
+            }, 1000);
             //FOLOSIM PROMISIUNEA
-            carPromise.then(function (myCar) {
+            carPromise.then(
+                function (myCar) {
                 log("I got a new car! It's a " + myCar.brand);
-                //reset(interval);
-                }, function (error) {
+                reset(interval);
+                }, 
+                function (error) {
                 log("I didn't get a car. " + error.message);
-                //reset(interval);
+                reset(interval);
             });
 
             $('#promises-demo p').remove();
@@ -58,10 +60,10 @@
             $('#promises-demo').append($('<p />').text(message));
         }
 
-        // function reset(interval) {
-        //     clearInterval(interval);
-        //     $('#promises-demo button').attr('disabled', false);
-        // }
+        function reset(interval) {
+            clearInterval(interval);
+            $('#promises-demo button').attr('disabled', false);
+        }
     </script>
 </body>
 

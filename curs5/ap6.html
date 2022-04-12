@@ -32,8 +32,9 @@
         function getData(iduser, callback) {
             $.ajax({
                 type: 'GET',
-                url: 'https://jsonplaceholder.typicode.com/users/' + iduser + '/posts',
-                headers: { "Access-Control-Allow-Origin": "*" },
+                 url: 'https://jsonplaceholder.typicode.com/users/' + iduser + '/posts',
+                //  headers: { "Access-Control-Allow-Origin": "*" },
+                //url:"http://localhost:5500/curs5/ap6_1.json",
                 dataType: 'json',
                 contentType: 'application/json',
                 success: function (data, status, error) {
@@ -77,6 +78,15 @@
                             else {
                                 showData(result);
                                 console.log('succes', result);
+                                getData(3,(err, res)=>{
+                                    if(err){
+                                        console.log(err);
+                                    }
+                                    else{
+                                        showData(res);
+                                        console.log('succes 3', res)
+                                    }
+                                })
                             }
                         });
                     }
